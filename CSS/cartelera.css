@@ -164,6 +164,7 @@ header nav a.activo {
     vertical-align: top;
     margin: 7px;
     margin-left: 30px;
+    filter: drop-shadow(8px 8px 5px #01010a65);
 
 }
 
@@ -171,4 +172,5 @@ header nav a.activo {
     filter: contrast(1.2) saturate(1);
     -webkit-transform: scale(1.1);
     transform: translate(0%, -2%);
+    filter: drop-shadow(8px 8px 5px #01010a65);
 }
