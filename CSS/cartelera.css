@@ -165,6 +165,7 @@ header nav a.activo {
     margin: 7px;
     margin-left: 30px;
     filter: drop-shadow(8px 8px 5px #01010a65);
+    border-radius: 5px;
 
 }
 
