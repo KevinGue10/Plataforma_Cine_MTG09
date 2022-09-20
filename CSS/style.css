@@ -19,6 +19,8 @@ body{
 }
 header{
     padding: 25px 0;
+    background-color: rgba(120, 120, 200, 0.1)
+    ;
 }
 
 header .contenedor{
@@ -29,7 +31,7 @@ header .contenedor{
 
 header .logo{
     color: var(--azul);
-    font-size: 45px;
+    font-size: 40px;
 }
 
 header nav a{
@@ -37,6 +39,7 @@ header nav a{
  text-decoration: none;
  font-weight: bold;
  margin-right: 15px;
+
 }
 
 header nav a:hover,
@@ -62,6 +65,7 @@ header nav a.activo {
     margin: 10%;
     margin-bottom: 5%;
 }
+
 .Estreno .sec_estreno{
     font-size: 45px;
     font-weight: 20000;
@@ -90,4 +94,52 @@ header nav a.activo {
 .Estreno .boton:hover{
     background: rgba(105, 200, 255, 0.8);
     color: #000668;
+}
+
+
+/*-------- Peliculas Recomendadas------*/
+.Recomendados{
+margin-bottom: 50px;
+margin: 25px;
+}
+.Recomendados .contenedor-titulo{
+margin-bottom:30px ;
+font-size: 25px;
+color: #000668;
+}
+.Recomendados.Contenedor-principal{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.Recomendados .Pelis{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.Recomendados .Pelis .PeliculasR{
+    width: 17%;
+    transition: .3s ease all;
+}
+.Recomendados .Pelis .PeliculasR .piepel{
+    align-items: center;
+    margin-top: 1px;
+    margin-left: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.Recomendados .Pelis .PeliculasR img{
+    width: 85%;
+    vertical-align: top;
+    margin: 20px;
+    margin-left: 30px;
+
+}
+.Recomendados .Pelis .PeliculasR :hover img{
+    filter: contrast(1.2) saturate(1) ;
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1);
 }
