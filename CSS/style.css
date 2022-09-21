@@ -154,5 +154,15 @@ header nav a.activo {
 .Recomendados .Pelis .PeliculasR :hover img {
     filter: contrast(1.2) saturate(1);
     -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    transform: scale(1.1);}
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+nav li:hover > ul {
+    display: block;
 }

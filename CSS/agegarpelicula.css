@@ -1,0 +1,139 @@
+:root {
+    --azul: #000668;
+    --fondo: #E7E7F6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(/image/fondoap.jpeg);
+    background-size: cover;
+}
+
+.contenedor {
+    width: 95%;
+    margin: auto
+}
+
+header {
+    padding: 25px 0;
+    background-color: rgba(120, 120, 200, 0.1);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: var(--azul);
+    font-size: 40px;
+}
+
+header nav a {
+    color: #0E3FF5;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+
+}
+
+header nav a:hover,
+header nav a.activo {
+    color: #ECAB00;
+}
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+nav li:hover > ul {
+    display: block;
+}
+
+.drag-area{
+    border: 5px dashed #000668;
+    height: 500px;
+    width: 45%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(231, 231, 246, 0.5);
+}
+.drag-area.active {
+    background-color: #618ac9;
+    color: black;
+    border: 2px dashed #0E3FF5;
+}
+.drag-area{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+.drag-area button{
+    padding: 10px 25px;
+    font-size: 15px;
+    border: 0;
+    outline: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.info{
+    width: 45%;
+    background: #000668;
+    padding: 30px;
+    
+    margin-top: 15px;
+    margin-left: 50%;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: floralwhite;
+    box-shadow: 7px 13px 37px #000;
+    position: relative;
+    
+}
+.controls {
+    width: 100%;
+    background: #000668;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #E7E7F6;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: floralwhite;
+}
+.info .botons {
+    width: 100%;
+    background: #E7E7F6;
+    border: none;
+    padding: 12px;
+    color: #000668;
+    margin: 16px;
+    font-size: 16px;
+
+}
+.info h4 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+}

@@ -81,3 +81,14 @@ header nav a.activo {
     margin-bottom: 16px;
 
 }
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+nav li:hover > ul {
+    display: block;
+}

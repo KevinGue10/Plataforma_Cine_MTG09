@@ -175,3 +175,14 @@ header nav a.activo {
     transform: translate(0%, -2%);
     filter: drop-shadow(8px 8px 5px #01010a65);
 }
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+nav li:hover > ul {
+    display: block;
+}
