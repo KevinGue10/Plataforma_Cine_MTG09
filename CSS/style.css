@@ -55,7 +55,7 @@ header nav a.activo {
     font-size: 14px;
     height: 500px;
     color: #E7E7F6;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Spiderman_back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Back/Spiderman_back.jpg);
     background-position: center;
     background-size: 85%;
     background-repeat: no-repeat;
@@ -157,8 +157,6 @@ header nav a.activo {
     margin-left: 10px;
     filter: drop-shadow(8px 8px 5px #01010a65);
     border-radius: 5px;
-
-
 }
 
 .Recomendados .Pelis .PeliculasR :hover img {
