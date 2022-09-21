@@ -55,7 +55,7 @@ header nav a.activo {
     font-size: 14px;
     height: 500px;
     color: #E7E7F6;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Spiderman_back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Back/Spiderman_back.jpg);
     background-position: center;
     background-size: 85%;
     background-repeat: no-repeat;
@@ -67,6 +67,7 @@ header nav a.activo {
 .Estreno .contenedor {
     margin: 10%;
     margin-bottom: 5%;
+
 }
 
 .Estreno .sec_estreno {
@@ -89,13 +90,15 @@ header nav a.activo {
 }
 
 .Estreno .boton {
-    background: rgba(250, 250, 110, .80);
+    background: rgba(220, 220, 100, .70);
+    margin-top: 10px;
     border: none;
     padding: 1% 60px;
     font: helvetica;
     font-size: 18px;
     cursor: pointer;
     transition: .3s ease all;
+    border-radius: 10px;
 }
 
 .Estreno .boton:hover {
@@ -137,18 +140,23 @@ header nav a.activo {
 
 .Recomendados .Pelis .PeliculasR .piepel {
     align-items: center;
-    margin-top: 1px;
-    margin-left: 30%;
+    margin-top: 4%;
+    margin-left: 50px;
+    margin-bottom: 20%;
     display: flex;
     justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
 }
+
 
 .Recomendados .Pelis .PeliculasR img {
     width: 85%;
     vertical-align: top;
     margin: 20px;
-    margin-left: 30px;
-
+    margin-left: 10px;
+    filter: drop-shadow(8px 8px 5px #01010a65);
+    border-radius: 5px;
 }
 
 .Recomendados .Pelis .PeliculasR :hover img {
@@ -165,4 +173,7 @@ min-width: 140px;
 }
 nav li:hover > ul {
     display: block;
+    -webkit-transform: scale(1.15);
+    transform: translate(0%, -2%);
+    filter: drop-shadow(8px 8px 5px #01010a65);
 }
