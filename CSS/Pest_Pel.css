@@ -1,0 +1,155 @@
+:root {
+    --azul: #000668;
+    --fondo: #E7E7F6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    width: 95%;
+    margin: auto
+}
+
+header {
+    padding: 25px 0;
+    background-color: rgba(120, 120, 200, 0.1);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logos {
+    color: var(--azul);
+    font-size: 40px;
+}
+
+header nav a {
+    color: #0E3FF5;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+
+}
+
+header nav a:hover,
+header nav a.activo {
+    color: #ECAB00;
+}
+
+/*-----------Fondo------------*/
+.postfondo1{
+    font-size: 35px;
+    height: 300px;
+    color: #E7E7F6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Back/Spiderman_back.jpg);
+    background-size: 100%;
+    
+}
+.postfondo1 .contenedor .Titulo-p{
+    margin-top: 30px;
+
+}
+.postfondo1 .contenedor .descp{
+    display: flex;
+    text-align: sub;
+    font-size: 30px;
+    margin-top: 140px;
+    color:rgba(255, 217, 1, 0.87)
+}
+.postfondo1 .contenedor .descp .cat{
+    margin-left: 30px;
+}
+.postfondo2{
+    font-size: 35px;
+    height: 300px;
+    color: #E7E7F6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Back/Blackphone_back.jpg);
+    background-size: 100%;
+    
+}
+.postfondo2 .contenedor .Titulo-p{
+    margin-top: 30px;
+
+}
+.postfondo2 .contenedor .descp{
+    display: flex;
+    text-align: sub;
+    font-size: 30px;
+    margin-top: 140px;
+    color:rgba(255, 217, 1, 0.87)
+}
+.postfondo2 .contenedor .descp .cat{
+    margin-left: 30px;
+}
+/*------------Parte inferior-----------*/
+
+.contenido .cont-contenido{
+    display: flex;
+    margin-left: 80px; 
+}
+.contenido .cont-contenido .post {
+width: 70%;
+}
+.contenido .cont-contenido .post img{
+    width: 145%;
+    margin-left: 10px;
+    margin-top: 5px;
+    filter: drop-shadow(8px 8px 5px #01010a65);
+    border-radius: 5px;
+}
+
+.contenido .cont-contenido .sinop {
+  margin-left: 10%;
+  margin-top: 30px;
+  text-align: justify;
+  margin-right: 15px;
+}
+.contenido .cont-contenido .sinop .infop {
+margin-top: 25px;
+}
+.contenido .cont-contenido .sinop .def{
+display: flex;
+margin-top: 10px;
+font-size: 22px;
+}
+.contenido .cont-contenido .sinop .def .nchr{
+
+    color: #ECAB00;
+}
+.contenido .cont-contenido .sinop .boton{
+    background: rgba(0, 81, 255, 0.952);
+    margin-top: 30px;
+    color:rgb(255, 255, 255);
+    border: none;
+    padding: 2% 60px;
+    font: helvetica;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s ease all;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.contenido .cont-contenido .sinop .boton:hover{
+    background: #ECAB00;
+    color: #000668;
+
+}
+
+.contenido .cont-contenido .sinop .def .chr{
+    margin-left: 5px;
+}
