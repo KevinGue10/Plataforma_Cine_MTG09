@@ -160,3 +160,50 @@ body {
     
     font-size: 20px;
 }
+.peliculac{
+    width: 45%;
+    background: #000668;
+    padding: 30px;
+    margin-top: 550px;
+    margin-right: 50px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: floralwhite;
+    box-shadow: 7px 13px 37px #000;
+    position: relative;
+    
+}
+.controls {
+    width: 100%;
+    background: #000668;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #E7E7F6;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: floralwhite;
+}
+.peliculac .botons {
+    width: 100%;
+    background: #E7E7F6;
+    border: none;
+    padding: 12px;
+    color: #000668;
+    margin: 16px;
+    font-size: 16px;
+}
+.peliculac h4 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+}
+.peliculac h2 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    font-size: 20px;
+}

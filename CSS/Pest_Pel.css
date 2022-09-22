@@ -48,7 +48,17 @@ header nav a:hover,
 header nav a.activo {
     color: #ECAB00;
 }
-
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+nav li:hover > ul {
+    display: block;
+}
 /*-----------Fondo------------*/
 .postfondo1{
     font-size: 35px;
