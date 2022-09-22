@@ -48,6 +48,10 @@ header nav a:hover,
 header nav a.activo {
     color: #ECAB00;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e7a7f18324c4bd6bb2bc96534a103e1a9dc6046a
 /*-------- submenu ajustes------*/
 ul, ol { list-style: none;}
 li, ol{ list-style: none;}
@@ -55,10 +59,23 @@ li, ol{ list-style: none;}
 display: none;
 position: absolute;
 min-width: 140px;
+<<<<<<< HEAD
 }
 nav li:hover > ul {
     display: block;
 }
+=======
+background-color: rgba(200, 200, 220, 0.8);
+}
+nav li:hover > ul {
+    display: block;
+    -webkit-transform: scale(1.15);
+    transform: translate(0%, -2%);
+    filter: drop-shadow(8px 8px 5px #01010a65);
+}
+
+
+>>>>>>> e7a7f18324c4bd6bb2bc96534a103e1a9dc6046a
 /*-----------Fondo------------*/
 .postfondo1{
     font-size: 35px;

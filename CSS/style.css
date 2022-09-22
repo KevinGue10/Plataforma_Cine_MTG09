@@ -31,7 +31,7 @@ header .contenedor {
     align-items: center;
 }
 
-header .logo {
+header .logos {
     color: var(--azul);
     font-size: 40px;
 }
@@ -47,6 +47,25 @@ header nav a {
 header nav a:hover,
 header nav a.activo {
     color: #ECAB00;
+}
+
+
+
+
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+background-color: rgba(200, 200, 220, 0.8);
+}
+nav li:hover > ul {
+    display: block;
+    -webkit-transform: scale(1.15);
+    transform: translate(0%, -2%);
+    filter: drop-shadow(8px 8px 5px #01010a65);
 }
 
 /*-------- Pelicula Estreno------*/
@@ -163,17 +182,3 @@ header nav a.activo {
     filter: contrast(1.2) saturate(1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);}
-/*-------- submenu ajustes------*/
-ul, ol { list-style: none;}
-li, ol{ list-style: none;}
-.nav li ul {
-display: none;
-position: absolute;
-min-width: 140px;
-}
-nav li:hover > ul {
-    display: block;
-    -webkit-transform: scale(1.15);
-    transform: translate(0%, -2%);
-    filter: drop-shadow(8px 8px 5px #01010a65);
-}
