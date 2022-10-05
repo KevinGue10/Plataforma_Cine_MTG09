@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
 
     <title>Royal Films: Unicentro</title>
@@ -16,8 +16,8 @@
         <div class="contenedor">
             <h2 class="logo">Royal Films: Multicine Unicentro</h2>
             <nav>
-                <a href="Pagina_inicial.html" class="activo">Inicio</a>
-                <a href="Cartelera.html">Cartelera</a>
+                <a href="/" class="activo">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
                 <a href="Inicio_sesion.html">Iniciar sesión</a>
                 <a href="Registro.html">Registro</a>
                 <a href="opinion.html">Tu opinión</a>
@@ -60,23 +60,23 @@
                 <div class="Contenedor-peliculas">
                     <div class="Pelis">
                         <div class="PeliculasR">
-                            <a href="Pest_Pelicula1.html"><img src="./image/Peliculas_mostradas/Spiderman.jpg" alt=""></a>
+                            <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Spiderman.jpg')}}" alt=""></a>
                             <h4 class="piepel">Spiderman Sin camino a casa </h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="Pest_Pelicula2.html"><img src="./image/Peliculas_mostradas/Blackphone.jpg" alt=""></a>
+                            <a href="Pest_Pelicula2.html"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Blackphone.jpg')}}" alt=""></a>
                             <h4 class="piepel">El télefono negro</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="Pest_Pelicula3.html"><img src="./image/Peliculas_mostradas/Minions.jpg" alt=""></a>
+                            <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Minions.jpg')}}" alt=""></a>
                             <h4 class="piepel">Minions: el origen de gru</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="#"><img src="./image/Peliculas_mostradas/Topgun.jpg" alt=""></a>
+                            <a href="#"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Topgun.jpg')}}" alt=""></a>
                             <h4 class="piepel">TopGun Maverick</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="#"><img src="./image/Peliculas_mostradas/Pinocho.jpg" alt=""></a>
+                            <a href="#"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Pinocho.jpg')}}" alt=""></a>
                             <h4 class="piepel">Pinocho</h4>
                         </div>
                     </div>
