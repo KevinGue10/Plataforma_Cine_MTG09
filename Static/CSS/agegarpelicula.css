@@ -64,7 +64,7 @@ nav li:hover > ul {
 
 .drag-area{
     border: 5px dashed #000668;
-    height: 500px;
+    height: 300px;
     width: 45%;
     border-radius: 5px;
     display: flex;
@@ -72,19 +72,50 @@ nav li:hover > ul {
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    background-color: rgba(231, 231, 246, 0.5);
+    background-color: rgba(201, 201, 226, 0.9);
+    margin-left: 2%;
 }
-.drag-area.active {
-    background-color: #618ac9;
+.drag-area:hover {
+    background-color: rgba(61, 61, 85, 0.4);
     color: black;
     border: 2px dashed #0E3FF5;
 }
-.drag-area{
-    font-size: 20px;
-    font-weight: 500;
+.drag-area1:hover {
+    background-color: rgba(61, 61, 85, 0.4);
     color: black;
+    border: 2px dashed #0E3FF5;
+}
+.drag-area1{
+    border: 5px dashed #000668;
+    height: 300px;
+    width: 45%;
+    border-radius: 5px;
+    margin-top: 25%;
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(201, 201, 226, 0.9);
+}
+.drag-area1.active {
+    background-color: #424253;
+    color: black;
+    border: 2px dashed #0E3FF5;
 }
 .drag-area button{
+    padding: 10px 25px;
+    font-size: 15px;
+    border: 0;
+    outline: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.drag-area1 button{
     padding: 10px 25px;
     font-size: 15px;
     border: 0;
@@ -98,8 +129,7 @@ nav li:hover > ul {
     width: 45%;
     background: #000668;
     padding: 30px;
-    
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 50%;
     border-radius: 4px;
     font-family: 'calibri';
@@ -127,7 +157,17 @@ nav li:hover > ul {
     color: #000668;
     margin: 16px;
     font-size: 16px;
+}
+.info .botons:hover{
+    background: #ECAB00;
+    color: #000668;
 
+}
+#nmov{
+    padding: 10px 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-display: left;
 }
 .info h4 {
     margin: 0;

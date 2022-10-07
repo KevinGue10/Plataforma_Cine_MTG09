@@ -12,3 +12,11 @@ def cartelera():
 @app.route('/Pelicula1/')
 def peli1():
     return render_template('Pest_Pelicula1.html')
+
+@app.route('/Agregarpelicula/')
+def Agpelicula():
+    return render_template('agregarpelicula.html')
+
+@app.route('/Gestionarpelicula/')
+def Gpeliculas():
+    return render_template('Gestionarpelicula.html')

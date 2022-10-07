@@ -25,8 +25,8 @@
                 <ul class="nav">
                 <li><a href="#" class="ajustes">Ajustes</a>
                     <ul>
-                    <li><a href="agregarpelicula.html" class="ajustes">Agregar pelicula</a></li>
-                    <li><a href="Gestionarpelicula.html" class="ajustes">Gestionar peliculas</a></li>
+                    <li><a href="/Agregarpelicula" class="ajustes">Agregar pelicula</a></li>
+                    <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
                     <li><a href="gestinarusuarios.html" class="ajustes">Gestionar usuarios</a></li>
                     </ul>
                 </li>
@@ -60,28 +60,31 @@
                 <div class="Contenedor-peliculas">
                     <div class="Pelis">
                         <div class="PeliculasR">
-                            <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Spiderman.jpg')}}" alt=""></a>
-                            <h4 class="piepel">Spiderman Sin camino a casa </h4>
+                            
+                            <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P1/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula1">Spiderman Sin camino a casa </h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="Pest_Pelicula2.html"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Blackphone.jpg')}}" alt=""></a>
-                            <h4 class="piepel">El télefono negro</h4>
+                            <a href="Pest_Pelicula2.html"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P2/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula2">El télefono negro</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Minions.jpg')}}" alt=""></a>
-                            <h4 class="piepel">Minions: el origen de gru</h4>
+                            <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P3/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula3">Minions: el origen de gru</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="#"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Topgun.jpg')}}" alt=""></a>
-                            <h4 class="piepel">TopGun Maverick</h4>
+                            <a href="#"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P4/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula4">TopGun Maverick</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="#"><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Pinocho.jpg')}}" alt=""></a>
-                            <h4 class="piepel">Pinocho</h4>
+                            <a href="#"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P5/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula5">Pinocho</h4>
                         </div>
                     </div>
 
-
+                    <script src="{{url_for('static',filename='/JS/editp.js')}}">
+                        precom()
+                    </script>
 
                 </div>
 
