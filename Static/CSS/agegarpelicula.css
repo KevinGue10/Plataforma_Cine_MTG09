@@ -143,6 +143,7 @@ nav li:hover > ul {
     background: #000668;
     padding: 10px;
     border-radius: 4px;
+    margin-top: 1%;
     margin-bottom: 16px;
     border: 1px solid #E7E7F6;
     font-family: 'calibri';
@@ -164,10 +165,12 @@ nav li:hover > ul {
 
 }
 #nmov{
-    padding: 10px 40px;
+    padding: 10px 60px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     font-display: left;
+    background: #ECAB00;
+    color: #000668;
 }
 .info h4 {
     margin: 0;

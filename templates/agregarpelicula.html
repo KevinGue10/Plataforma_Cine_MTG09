@@ -47,7 +47,7 @@
      </div>
     <div id="preview"></div>
 
-    <script src="{{url_for('static',filename='/JS/editp.js')}}"></script>
+   
 <section class="info">
     <h4>Informaciòn Pelicula</h4>
     <script></script>
@@ -55,17 +55,18 @@
         <output id="nmpeli" name="salida" ></output>
     </li>
     <select id="nmov" name="escpel">
-        <option value="Pelicula1">Editar Pelicula 1</option>
-        <option value="Pelicula2">Editar Pelicula 2</option>
-        <option value="Pelicula3">Editar Pelicula 3</option>
-        <option value="Pelicula4">Editar Pelicula 4</option>
-        <option value="Pelicula5">Editar Pelicula 5</option>
-        <option value="Pelicula6">Editar Pelicula 6</option>
-        <option value="Pelicula7">Editar Pelicula 7</option>
-        <option value="Pelicula8">Editar Pelicula 8</option>
-        <option value="Pelicula9">Editar Pelicula 9</option>
-        <option value="Pelicula10">Editar Pelicula 10</option>
+        <option value="1">Editar Pelicula 1</option>
+        <option value="2">Editar Pelicula 2</option>
+        <option value="3">Editar Pelicula 3</option>
+        <option value="4">Editar Pelicula 4</option>
+        <option value="5">Editar Pelicula 5</option>
+        <option value="6">Editar Pelicula 6</option>
+        <option value="7">Editar Pelicula 7</option>
+        <option value="8">Editar Pelicula 8</option>
+        <option value="9">Editar Pelicula 9</option>
+        <option value="10">Editar Pelicula 10</option>
       </select>
+      <button role="button" class="boton" onclick="showp()">Editar</button>
     <input type="text" id="titulo" class="controls" placeholder="Titulo de la película">
     <input type="text" id="generos" class="controls" placeholder="Generos de la película ">
     <input type="text" id="duracion" class="controls" placeholder="Duración en minutos de la pelicula">
@@ -73,9 +74,10 @@
     <input type="text" id="titulo_org" class="controls" placeholder="Titulo Original">
     <input type="text" id="reparto" class="controls" placeholder="Reparto">
     <input type="text" id="director" class="controls" placeholder="Director">
+   
     <input class="botons" type="submit" value="Subir" onclick="agp()">
 </section>
-
+<script src="{{url_for('static',filename='/JS/editp.js')}}"> </script>
 </body>
 
 </html>
