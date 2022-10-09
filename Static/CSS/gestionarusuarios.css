@@ -1,0 +1,119 @@
+:root {
+    --azul: #000668;
+    --fondo: #E7E7F6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor {
+    width: 95%;
+    margin: auto
+}
+
+header {
+    padding: 25px 0;
+    background-color: rgba(120, 120, 200, 0.1);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: var(--azul);
+    font-size: 40px;
+}
+
+header nav a {
+    color: #0E3FF5;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+
+}
+
+.ajustes{
+    color: #ECAB00;
+}
+    
+
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+nav li:hover > ul {
+    display: block;
+}
+/*-------- background------*/
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(/image/fondoap.jpeg);
+    background-size: cover;
+}
+/*-------- tabla------*/
+main{display: grid;
+grid-template-columns: 1fr ;}
+#cont{
+    background-color: rgba(231, 231, 246, 0.5);
+    padding: 20px;
+
+}
+#cont > h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#cont > form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#cont >form >input{
+    padding: 8px;
+    border-radius: 6px;
+
+    margin-top: 10px;
+    
+}
+#cont >form >button{
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 10px;
+   color: floralwhite;
+    background-color: #000668;
+}
+#cont >form >button:hover{
+cursor: pointer;
+transform: scale(0.97);
+}
+
+
+
+
+#cont2{
+    background-color: rgba(231, 231, 246, 0.5);
+}
+table{
+    width: 100%;
+}
+table, td,th, tr{
+    border-collapse: collapse;
+    border: 1px solid #000668;
+}
+th{
+    padding: 10px 5px;
+    background-color: cornflowerblue;
+}
+td{
+    padding: 10px 5px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/agegarpelicula.css')}}">
+    <title>Agregar peliculas</title>
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logo">Royal Films: Multicine Unicentro</h2>
+            <nav>
+                <a href="/">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises">Iniciar sesión</a>
+                <a href="/Registro">Registro</a>
+                <a href="/Opinion">Tu opinión</a>
+                
+                <ul class="nav">
+                <li><a href="#" class="ajustes">Ajustes</a>
+                    <ul>
+                        <li><a href="/Agregarpelicula" class="activo" class="ajustes">Agregar pelicula</a></li>
+                        <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
+                        <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
+                    </ul>
+                </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    
+ <div class="drag-area">
+<h2>Arrastra y suelta la portada de la pelicula</h2>
+<span>0</span>
+<button>selecciona tus archivos</button>
+<input type="file" name="" id="input-file" hidden multiple>
+ </div>
+<div id="preview"></div>
+<div class="drag-area1">
+    <h2>Arrastra y suelta el fondo de la pelicula</h2>
+    <span>0</span>
+    <button>selecciona tus archivos</button>
+    <input type="file" name="" id="input-file" hidden multiple>
+     </div>
+    <div id="preview"></div>
+
+    <script src="{{url_for('static',filename='/JS/editp.js')}}"></script>
+<section class="info">
+    <h4>Informaciòn Pelicula</h4>
+    <script></script>
+    <li>
+        <output id="nmpeli" name="salida" ></output>
+    </li>
+    <select id="nmov" name="escpel">
+        <option value="Pelicula1">Editar Pelicula 1</option>
+        <option value="Pelicula2">Editar Pelicula 2</option>
+        <option value="Pelicula3">Editar Pelicula 3</option>
+        <option value="Pelicula4">Editar Pelicula 4</option>
+        <option value="Pelicula5">Editar Pelicula 5</option>
+        <option value="Pelicula6">Editar Pelicula 6</option>
+        <option value="Pelicula7">Editar Pelicula 7</option>
+        <option value="Pelicula8">Editar Pelicula 8</option>
+        <option value="Pelicula9">Editar Pelicula 9</option>
+        <option value="Pelicula10">Editar Pelicula 10</option>
+      </select>
+    <input type="text" id="titulo" class="controls" placeholder="Titulo de la película">
+    <input type="text" id="generos" class="controls" placeholder="Generos de la película ">
+    <input type="text" id="duracion" class="controls" placeholder="Duración en minutos de la pelicula">
+    <input type="text" id="sinopsis" class="controls" placeholder="Resumen de la película">
+    <input type="text" id="titulo_org" class="controls" placeholder="Titulo Original">
+    <input type="text" id="reparto" class="controls" placeholder="Reparto">
+    <input type="text" id="director" class="controls" placeholder="Director">
+    <input class="botons" type="submit" value="Subir" onclick="agp()">
+</section>
+
+</body>
+
+</html>

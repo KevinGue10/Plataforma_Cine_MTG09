@@ -1,0 +1,114 @@
+:root {
+    --azul: #000668;
+    --fondo: #E7E7F6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    width: 95%;
+    margin: auto
+}
+
+header {
+    padding: 25px 0;
+    background-color: rgba(120, 120, 200, 0.1);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logos {
+    color: var(--azul);
+    font-size: 40px;
+}
+
+header nav a {
+    color: #0E3FF5;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+
+}
+
+header nav a:hover,
+header nav a.activo {
+    color: #ECAB00;
+}
+/*-------- submenu ajustes------*/
+ul, ol { list-style: none;}
+li, ol{ list-style: none;}
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+background-color: rgba(200, 200, 220, 0.8);
+}
+nav li:hover > ul {
+    display: block;
+    -webkit-transform: scale(1.15);
+    transform: translate(0%, -2%);
+    filter: drop-shadow(8px 8px 5px #01010a65);
+}
+
+/*-----Peliculas Rec-------*/
+/*-------- Peliculas Recomendadas------*/
+
+.contenedor-op{ 
+    width: 500px;
+    background: #000668;
+    padding: 40px;
+    margin-left: 15%;
+    margin-top: 40px;
+    border-radius: 8px;
+    font-family: 'calibri';
+    color: floralwhite;
+    box-shadow: 7px 13px 37px #000;
+}
+.Titulopes{
+    font-size: 39px;
+    font-weight: bold;
+    color:#000668;
+    margin-top: 10px;
+}
+#nmov{
+    padding: 10px 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-display: left;
+}
+
+.textp{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.clasinc{
+    margin-top: 10px;
+    padding: 10px 5px;
+}
+.clasin{
+    margin-top: 10px;
+    font-size:15px;
+    padding: 15px 5px;
+    font-display: left;
+
+}
+.clasin p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}

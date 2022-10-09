@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/gstpeli.css')}}">
+    <title>Gestionar peliculas</title>
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logo">Royal Films: Multicine Unicentro</h2>
+            <nav>
+                <a href="/">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises">Iniciar sesión</a>
+                <a href="/Registro">Registro</a>
+                <a href="/Opinion">Tu opinión</a>
+                
+                <ul class="nav">
+                <li><a href="#" class="ajustes">Ajustes</a>
+                    <ul>
+                        <li><a href="/Agregarpelicula" class="ajustes">Agregar pelicula</a></li>
+                        <li><a href="/Gestionarpelicula"  class="activo" class="ajustes">Gestionar peliculas</a></li>
+                        <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
+                    </ul>
+                </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <div class="Recomendados">
+        <div class="contenedor-titulo">
+            <h2>Gestion de peliculas</h2>
+        </div>
+        <div class="Contenedor-princpipal" >
+            <div class="Contenedor-peliculas">
+                
+            
+                <div class="Pelis">
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Peliculas_mostradas/Spiderman.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Spiderman Sin camino a casa</h4>
+                        <a href="/Agregarpelicula/"><button role="button" class="boton"  >Editar/Cambiar Pelicula</button></a> 
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/Blackphone.jpg')}}" alt=""></a>
+                        <h4 class="piepel">El télefono negro</h4>
+                        <button role="button" class="boton" >Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/Minions.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Minions: el origen de gru</h4>
+                        <button role="button" class="boton"  >Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/Topgun.jpg')}}" alt=""></a>
+                        <h4 class="piepel">TopGun Maverick</h4>
+                        <button role="button" class="boton" >Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/diablollama.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Cuando el Diablo Llama</h4>
+                        <button role="button" class="boton" >Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/emergenaire.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Emergencia en el aire</h4>
+                        <button role="button" class="boton">Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/inviinfierno.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Invitación al infierno</h4>
+                        <button role="button" class="boton" >Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/Pinocho.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Pinocho</h4>
+                        <button role="button" class="boton">Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/supermascotas.jpg')}}" alt=""></a>
+                        <h4 class="piepel">DC Liga de SúperMascotas</h4>
+                        <button role="button" class="boton" >Editar/Cambiar Pelicula</button>
+                    </div>
+                    <div class="PeliculasR">
+                        <a ><img src="{{url_for('static',filename='/image/Cartelera/nop.jpg')}}" alt=""></a>
+                        <h4 class="piepel">¡Nop!</h4>
+                        <button role="button" class="boton" >Editar/Cambiar Pelicula</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

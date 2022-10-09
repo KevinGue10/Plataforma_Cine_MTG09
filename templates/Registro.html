@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style2.css')}}">
+    <title>Formulario de registro</title>
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logo">Royal Films: Multicine Unicentro</h2>
+            <nav>
+                <a href="/">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises" >Iniciar sesión</a>
+                <a href="/Registro" class="activo" >Registro</a>
+                <a href="/Opinion">Tu opinión</a>
+                <ul class="nav">
+                    <li><a href="#" class="ajustes">Ajustes</a>
+                        <ul>
+                            <li><a href="/Agregarpelicula" class="ajustes">Agregar pelicula</a></li>
+                            <li><a href="/Gestionarpelicula" class="ajustes">Gestionar peliculas</a></li>
+                            <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+    
+            
+            </nav>
+        </div>
+    </header>
+    <section class="formregistro">
+        <h4>Formulario Registro</h4>
+        <input class="controls"  type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
+        <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido">
+        <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+        <input class="controls" type="password" name="correo" id="correos" placeholder="Ingrese su contraseña">
+        <p>Acepto los <a href="#">terminos y condiciones</a></p>
+        <input class="botons" type="submit" value="Registrar">
+        <p>¿Ya tienes una cuenta?<a href="#">Inicia sesion</a></p>
+    </section>
+    
+    
+</body>
+</html>
