@@ -5,7 +5,7 @@ from flask import g
 def get_db():
     try:
         if 'db' not in g:
-            g.db=sqlite3.connect('RYcine.db')
+            g.db=sqlite3.connect('Pcine.db')
             print("Conexion completa")
             return g.db
     except Error:

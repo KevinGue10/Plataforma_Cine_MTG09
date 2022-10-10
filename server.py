@@ -2,11 +2,25 @@ from flask import Flask,render_template
 import sqlite3
 from sqlite3 import Error
 from db import get_db,close_db
+
 app=Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('Pagina_inicial.html')
+    db=get_db()
+    snm=['','','','','']
+    nm=['','','','','']
+    for i in range (5):
+        print(i)
+        a=str(i+1)
+        snm[i]=db.execute('Select name from Gpeliculas where ID='+a).fetchone()
+    print(snm)
+#    for i in range (5):
+ #       x = snm[i].split("('")
+  #      nm[i]=x[1].split("',)")
+
+    print(nm)
+    return render_template('Pagina_inicial.html',nm=snm)
 
 @app.route('/Cartelera/')
 def cartelera():
@@ -39,23 +53,37 @@ def Gusuar():
 @app.route('/Pelicula1/')
 def peli1():
     db=get_db()
-
     Datos=db.execute('Select * from Gpeliculas where ID=1').fetchone()
     print(Datos)
-    name=Datos[1]
-    org=Datos[2]
-    gen=Datos[3]
-    dur=Datos[4]
-    res=Datos[5]
-    rep=Datos[6]
     return render_template('Pest_Pelicula1.html',Datos=Datos)
 
 @app.route('/Pelicula2/')
 def peli2():
-    return render_template('Pest_Pelicula2.html')
+    db=get_db()
+    Datos=db.execute('Select * from Gpeliculas where ID=2').fetchone()
+    print(Datos)
+    ruta="{{url_for('static',filename='/image/Admin/Principales en cartelera/P2/Poster.jpg')}}"
+    return render_template('Pest_Pelicula1.html',Datos=Datos, ruta=ruta)
 
 @app.route('/Pelicula3/')
 def peli3():
-    return render_template('Pest_Pelicula3.html')
+    db=get_db()
+    Datos=db.execute('Select * from Gpeliculas where ID=3').fetchone()
+    print(Datos)
+    return render_template('Pest_Pelicula1.html',Datos=Datos)
+
+@app.route('/Pelicula4/')
+def peli4():
+    db=get_db()
+    Datos=db.execute('Select * from Gpeliculas where ID=4').fetchone()
+    print(Datos)
+    return render_template('Pest_Pelicula1.html',Datos=Datos)
+
+@app.route('/Pelicula5/')
+def peli5():
+    db=get_db()
+    Datos=db.execute('Select * from Gpeliculas where ID=3').fetchone()
+    print(Datos)
+    return render_template('Pest_Pelicula1.html',Datos=Datos)   
    
     
