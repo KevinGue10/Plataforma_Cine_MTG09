@@ -50,11 +50,9 @@
    
 <section class="info">
     <h4>Informaciòn Pelicula</h4>
-    <script></script>
-    <li>
-        <output id="nmpeli" name="salida" ></output>
-    </li>
+  
     <select id="nmov" name="escpel">
+        {% block option%}
         <option value="1">Editar Pelicula 1</option>
         <option value="2">Editar Pelicula 2</option>
         <option value="3">Editar Pelicula 3</option>
@@ -65,6 +63,7 @@
         <option value="8">Editar Pelicula 8</option>
         <option value="9">Editar Pelicula 9</option>
         <option value="10">Editar Pelicula 10</option>
+        {% endblock %}
       </select>
       <button role="button" class="boton" onclick="showp()">Editar</button>
     <input type="text" id="titulo" class="controls" placeholder="Titulo de la película">

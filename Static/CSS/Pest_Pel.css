@@ -31,7 +31,7 @@ header .contenedor {
     align-items: center;
 }
 
-header .logos {
+header .logo {
     color: var(--azul);
     font-size: 40px;
 }
@@ -66,27 +66,49 @@ nav li:hover > ul {
 
 
 /*-----------Fondo------------*/
-.postfondo1{
+.postfondo{
     font-size: 35px;
-    height: 300px;
     color: #E7E7F6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Back/Spiderman_back.jpg);
-    background-size: 100%;
     
 }
-.postfondo1 .contenedor .Titulo-p{
+.con1{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P1/Back.jpg);
+    background-size: 105%;
+}
+.con2{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P2/Back.jpg);
+    background-size: 105%;
+}
+.con3{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P3/Back.jpg);
+    background-size: 105%;
+}
+.con4{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P4/Back.jpg);
+    background-size: 105%;
+}
+.con5{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P5/Back.jpg);
+    background-size: 105%;
+}
+.postfondo .Titulo-p{
     margin-top: 30px;
 
 }
-.postfondo1 .contenedor .descp{
+.postfondo .descp{
     display: flex;
     text-align: sub;
     font-size: 30px;
-    margin-top: 140px;
+    margin-top: 14%;
     color:rgba(255, 217, 1, 0.87)
 }
-.postfondo1 .contenedor .descp .cat{
+.postfondo .descp .cat{
     margin-left: 30px;
 }
 .postfondo2{
