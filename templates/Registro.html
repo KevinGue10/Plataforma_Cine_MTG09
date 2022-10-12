@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style2.css">
+    <link rel="stylesheet" href="{{url_for('static',filename'css/style2.css')}}">
+    <script src="{{url_for('templates',filename'js/validar.js')}}"></script>
     <title>Formulario de registro</title>
 </head>
 <body>
@@ -31,17 +32,22 @@
             </nav>
         </div>
     </header>
-    <section class="formregistro">
+    <form action="{{url_for('templates',filename'Registro.html')}}" method="post" name="formRegistro" class="formregistro" onSubmit="return validar_registro()">
         <h4>Formulario Registro</h4>
+        
         <input class="controls"  type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
         <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido">
         <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
-        <input class="controls" type="password" name="correo" id="correos" placeholder="Ingrese su contraseña">
+        <input class="controls" type="password" name="contraseña" id="constraseña" placeholder="Ingrese su contraseña">
         <p>Acepto los <a href="#">terminos y condiciones</a></p>
         <input class="botons" type="submit" value="Registrar">
         <p>¿Ya tienes una cuenta?<a href="#">Inicia sesion</a></p>
+    </form>
+    <section class="content">
+        {% for message in get_flashed()%}
+        <div class="flash">{{message}}</div>
+        {%endfor%}
     </section>
-    
     
 </body>
 </html>
