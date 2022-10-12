@@ -39,11 +39,8 @@
         <div class="Estreno">
             <div class="contenedor">
                 <h1 class="sec_estreno">Pelicula en Estreno</h1>
-                <h3 class="titulo">Spiderman Sin camino a casa</h3>
-                <p class="descripcion">Peter Parker es desenmascarado y por tanto no es capaz de separar su vida normal
-                    de los enormes
-                    riesgos que conlleva ser un súper héroe. Cuando pide ayuda a Doctor Strange, los riesgos pasan
-                    a ser aún más peligrosos, obligándole a descubrir lo que realmente significa ser Spider-Man.</p>
+                <h3 class="titulo">{{Datos[0]}}</h3>
+                <p class="descripcion">{{des[5]}}</p>
 
                 <button role="button" class="boton">Comprar ticket</button>
               <a href="/Pelicula1"><button role="button" class="boton" >Ver descripción</button></a>  
@@ -60,24 +57,24 @@
                     <div class="Pelis">
                         <div class="PeliculasR">
                             
-                            <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P1/Poster.jpg')}}" alt=""></a>
-                            <h4 class="piepel" id="RPelicula1">{{nm[0]}} </h4>
+                            <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Admin/P1/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula1">{{Datos[0]}} </h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="/Pelicula2"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P2/Poster.jpg')}}" alt=""></a>
-                            <h4 class="piepel" id="RPelicula2">{{nm[1]}}</h4>
+                            <a href="/Pelicula2"><img src="{{url_for('static',filename='/image/Admin/P2/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula2">{{Datos[1]}}</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P3/Poster.jpg')}}" alt=""></a>
-                            <h4 class="piepel" id="RPelicula3">{{nm[2]}}</h4>
+                            <a href="/Pelicula3"><img src="{{url_for('static',filename='/image/Admin/P3/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula3">{{Datos[2]}}</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="#"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P4/Poster.jpg')}}" alt=""></a>
-                            <h4 class="piepel" id="RPelicula4">{{nm[3]}}</h4>
+                            <a href="/Pelicula4"><img src="{{url_for('static',filename='/image/Admin/P4/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula4">{{Datos[3]}}</h4>
                         </div>
                         <div class="PeliculasR">
-                            <a href="#"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P5/Poster.jpg')}}" alt=""></a>
-                            <h4 class="piepel" id="RPelicula5">{{nm[4]}}</h4>
+                            <a href="/Pelicula5"><img src="{{url_for('static',filename='/image/Admin/P5/Poster.jpg')}}" alt=""></a>
+                            <h4 class="piepel" id="RPelicula5">{{Datos[4]}}</h4>
                         </div>
                     </div>
                 </div>

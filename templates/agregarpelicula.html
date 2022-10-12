@@ -31,51 +31,48 @@
             </nav>
         </div>
     </header>
-    
- <div class="drag-area">
-<h2>Arrastra y suelta la portada de la pelicula</h2>
-<span>0</span>
-<button>selecciona tus archivos</button>
-<input type="file" name="" id="input-file" hidden multiple>
- </div>
-<div id="preview"></div>
-<div class="drag-area1">
-    <h2>Arrastra y suelta el fondo de la pelicula</h2>
-    <span>0</span>
-    <button>selecciona tus archivos</button>
-    <input type="file" name="" id="input-file" hidden multiple>
-     </div>
-    <div id="preview"></div>
+    <div class="pagprin">
+        {% block carga%}
+        <form action="/upload" method="POST" enctype="multipart/form-data">    
+        
+        {%endblock%}
+            <div class="drag-area">
+            <h2>Arrastra y suelta la portada de la pelicula</h2>
+            <span></span>
+        
+                <input type="file" id="uploadFile" name="uploadFile" accept=".jpg .png .jpeg">
+                
+            </div>
+            <div class="drag-area1">
+            <h2>Arrastra y suelta el fondo de la pelicula</h2>
+            <span></span>
+            <input type="file"id="uploadFile" name="uploadBFile"  accept=".jpg .png">
+             </div>
+             <input type="submit" id="enviarimg">
+            </form>
+        <section class="info">
+            <h4>Informaciòn Pelicula</h4>
+            
+            {% block formulario%}
+            <input type="text" id="titulo" class="controls" placeholder="Titulo de la película">
+            <input type="text" id="generos" class="controls" placeholder="Generos de la película ">
+            <input type="text" id="duracion" class="controls" placeholder="Duración en minutos de la pelicula">
+            <input type="text" id="sinopsis" class="controls" placeholder="Resumen de la película">
+            <input type="text" id="titulo_org" class="controls" placeholder="Titulo Original">
+            <input type="text" id="reparto" class="controls" placeholder="Reparto">
+            <input type="text" id="director" class="controls" placeholder="Director">
+            {% endblock %}
+            
+        </section>
+
+    </div>
+   
+
+
+
 
    
-<section class="info">
-    <h4>Informaciòn Pelicula</h4>
-  
-    <select id="nmov" name="escpel">
-        {% block option%}
-        <option value="1">Editar Pelicula 1</option>
-        <option value="2">Editar Pelicula 2</option>
-        <option value="3">Editar Pelicula 3</option>
-        <option value="4">Editar Pelicula 4</option>
-        <option value="5">Editar Pelicula 5</option>
-        <option value="6">Editar Pelicula 6</option>
-        <option value="7">Editar Pelicula 7</option>
-        <option value="8">Editar Pelicula 8</option>
-        <option value="9">Editar Pelicula 9</option>
-        <option value="10">Editar Pelicula 10</option>
-        {% endblock %}
-      </select>
-      <button role="button" class="boton" onclick="showp()">Editar</button>
-    <input type="text" id="titulo" class="controls" placeholder="Titulo de la película">
-    <input type="text" id="generos" class="controls" placeholder="Generos de la película ">
-    <input type="text" id="duracion" class="controls" placeholder="Duración en minutos de la pelicula">
-    <input type="text" id="sinopsis" class="controls" placeholder="Resumen de la película">
-    <input type="text" id="titulo_org" class="controls" placeholder="Titulo Original">
-    <input type="text" id="reparto" class="controls" placeholder="Reparto">
-    <input type="text" id="director" class="controls" placeholder="Director">
-   
-    <input class="botons" type="submit" value="Subir" onclick="agp()">
-</section>
+
 <script src="{{url_for('static',filename='/JS/editp.js')}}"> </script>
 </body>
 

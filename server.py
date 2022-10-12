@@ -1,21 +1,31 @@
-from flask import Flask,render_template
+from email import generator
+from flask import Flask,render_template,request,redirect,url_for
 import os
 import sqlite3
 from sqlite3 import Error
 from db import get_db,close_db
-from quer import nomb
+from quer import nomb,gene
+from form_pel import FormPel
+from werkzeug.utils import secure_filename
+from carpetas import rutc
 
 app=Flask(__name__)
 
+app.secret_key=os.urandom(24)
 @app.route('/')
 def index():
     db=get_db()
-    nm=nomb(db)
-    return render_template('Pagina_inicial.html',nm=nm)
+    Datos=nomb(db)
+    desc=db.execute('Select * from Gpeliculas where ID=1').fetchone()
+    return render_template('Pagina_inicial.html',Datos=Datos,des=desc)
 
 @app.route('/Cartelera/')
 def cartelera():
-    return render_template('Cartelera.html')
+    db=get_db()
+    Datos=nomb(db)
+    gen=gene(db)
+
+    return render_template('Cartelera.html',Datos=Datos,gene=gen)
 
 @app.route('/Inises/')
 def inises():
@@ -29,61 +39,75 @@ def regis():
 def opinion():
     return render_template('opinion.html')
 
-@app.route('/Agregarpelicula/')
-def Agpelicula():
-    return render_template('agregarpelicula.html')
+@app.route('/Agregarpelicula<string:p>/', methods=['GET','POST'])
+def Agpelicula(p):
+    form=FormPel()
+    db=get_db()
+    Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()
+    if (form.validate_on_submit()):
+        name=request.form['titulo']
+        original=request.form['original']
+        genero=request.form['genero']
+        duracion=request.form['duracion']
+        resumen=request.form['resumen']
+        reparto=request.form['reparto']
+        director=request.form['director']
+        numpel=p
+        db.execute("UPDATE Gpeliculas SET name ='"+name+"' , Original = '"+original+"', Generos = '"+genero+"', Duracion = '"+duracion+
+        "', Resumen = '"+resumen+"', Reparto = '"+reparto+"', Director= '"+director+"' WHERE ID ="+numpel)
+        db.commit()
+    return render_template('fmpel.html',form=form,p=int(p),Datos=Datos)
 
 @app.route('/Gestionarpelicula/')
 def Gpeliculas():
-    return render_template('Gestionarpelicula.html')
+    db=get_db()
+    Datos=nomb(db)
+    return render_template('Gestionarpelicula.html',Datos=Datos)
 
 @app.route('/Gestinarusuarios/')
 def Gusuar():
     return render_template('gestinarusuarios.html')
 
-@app.route('/Pelicula1/')
-def peli1():
+@app.route('/Pelicula<string:p>/')
+def peli1(p):
     
     db=get_db()
     nm=nomb(db)
-    Datos=db.execute('Select * from Gpeliculas where ID=1').fetchone()
-    print(Datos)
-    
-    return render_template('rutas.html',Datos=Datos,p=1,nm=nm)
+    Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()
+    print(p)
+    r=int(p)
+    return render_template('rutas.html',Datos=Datos,p=r,nm=nm)
 
-@app.route('/Pelicula2/')
-def peli2():
-    db=get_db()
-    nm=nomb(db)
-    Datos=db.execute('Select * from Gpeliculas where ID=2').fetchone()
-    print(Datos)
-    return render_template('rutas.html',Datos=Datos,p=2, nm=nm)
-
-@app.route('/Pelicula3/')
-def peli3():
-    db=get_db()
-    nm=nomb(db)
-    Datos=db.execute('Select * from Gpeliculas where ID=3').fetchone()
-    print(Datos)
-    return render_template('rutas.html',Datos=Datos,p=3, nm=nm)
-
-@app.route('/Pelicula4/')
-def peli4():
-    db=get_db()
-    nm=nomb(db)
-    Datos=db.execute('Select * from Gpeliculas where ID=4').fetchone()
-    print(Datos)
-    return render_template('rutas.html',Datos=Datos,p=4, nm=nm)
-
-@app.route('/Pelicula5/')
-def peli5():
-    db=get_db()
-    Datos=db.execute('Select * from Gpeliculas where ID=5').fetchone()
-    print(Datos)
-    return render_template('Pest_Pelicula1.html',Datos=Datos)   
 
 @app.route('/Tick1/')
 def tiquete1():
      return render_template('rutas2.html',p=1)   
 
+
+def all_file(file):
+    file=file.split('.')
+    if file[1] in AEX:
+        return True
+    return False
+
+AEX=set(['png',"jpg","jpeg"])
+@app.route('/upload<string:p>', methods=["POST"])
+def upload(p):
+    print("valor"+p)
+    p=int(p)
+    UB=rutc(p,app)
+
+    filep=request.files["uploadFile"]
+    fileb=request.files["uploadBFile"]
+    filenamep=secure_filename(filep.filename)
+    filenameb=secure_filename(fileb.filename)
+    if filep and all_file(filenameb):
+        print("permitido")
+        filep.save(os.path.join(UB,filenamep))
+
+    if fileb and all_file(filenameb):
+        print("permitido")
+        fileb.save(os.path.join(UB,filenameb))
     
+    
+    return redirect(url_for('Agpelicula',p=p))

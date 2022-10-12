@@ -74,27 +74,53 @@ nav li:hover > ul {
 }
 .con1{
     height: 350px;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P1/Back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P1/Back.jpg);
     background-size: 105%;
 }
 .con2{
     height: 350px;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P2/Back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P2/Back.jpg);
     background-size: 105%;
 }
 .con3{
     height: 350px;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P3/Back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P3/Back.jpg);
     background-size: 105%;
 }
 .con4{
     height: 350px;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P4/Back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P4/Back.jpg);
     background-size: 105%;
 }
 .con5{
     height: 350px;
-    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/Descripcion_pelicula/P5/Back.jpg);
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P5/Back.jpg);
+    background-size: 105%;
+}
+.con6{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P6/Back.jpg);
+    background-size: 105%;
+}
+.con7{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P7/Back.jpg);
+    background-size: 105%;
+}
+.con8{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P8/Back.jpg);
+    background-size: 105%;
+    
+}
+.con9{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P9/Back.jpg);
+    background-size: 105%;
+}
+.con10{
+    height: 350px;
+    background: linear-gradient(rgba(10, 10, 20, .50)50%, rgba(10, 10, 20, .50)80%), url(../image/Admin/P10/Back.jpg);
     background-size: 105%;
 }
 .postfondo .Titulo-p{
@@ -204,7 +230,7 @@ font-size: 20px;
 
     color: #ECAB00;
 }
-.botona{
+.boton{
     background: rgba(0, 81, 255, 0.952);
     margin-top: 150px;
     color:rgb(255, 255, 255);

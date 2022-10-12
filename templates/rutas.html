@@ -1,25 +1,28 @@
 {% extends "Pest_Pelicula1.html" %}
 {% block img %}
+
 {%if p==1:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P1/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P1/Poster.jpg')}}" alt=""></a>
 {%elif p==2:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P2/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P2/Poster.jpg')}}" alt=""></a>
 {%elif p==3:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P3/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P3/Poster.jpg')}}" alt=""></a>
 {%elif p==4:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P4/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P4/Poster.jpg')}}" alt=""></a>
 {%elif p==5:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P5/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P5/Poster.jpg')}}" alt=""></a>
 {%elif p==6:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P6/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P6/Poster.jpg')}}" alt=""></a>
 {%elif p==7:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P7/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P7/Poster.jpg')}}" alt=""></a>
 {%elif p==8:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P8/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P8/Poster.jpg')}}" alt=""></a>
 {%elif p==9:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P9/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P9/Poster.jpg')}}" alt=""></a>
 {%elif p==10:%}
-<a><img src="{{url_for('static',filename='/image/Admin/Descripcion_pelicula/P10/Poster.jpg')}}" alt=""></a>
+<a><img src="{{url_for('static',filename='/image/Admin/P10/Poster.jpg')}}" alt=""></a>
+{%else%}
+<h1>Ninguno</h1>
 {%endif%}
 {% endblock %}
 

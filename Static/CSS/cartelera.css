@@ -139,12 +139,12 @@ header nav a.activo {
 .Recomendados .Pelis .PeliculasR .piepel {
     align-items: center;
     margin-top: 1px;
-    margin-left: 13.5%;
+    margin-left: 16.5%;
     margin-bottom: 4%;
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
-    font-weight: bolder;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .gen{
@@ -154,7 +154,7 @@ header nav a.activo {
     margin-bottom: 20%;
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: lighter;
 }
 

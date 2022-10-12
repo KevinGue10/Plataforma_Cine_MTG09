@@ -1,0 +1,76 @@
+{% extends "agregarpelicula.html" %}
+
+{% block formulario%}
+
+<form action="" method="post" novalidate>
+{{form.hidden_tag()}}
+
+<p class="FormularioT">
+   PELICULA A MODIFICAR:  {{Datos[1]}}
+</p>
+<p class="Formulario">
+    {{form.titulo.label}}<br>
+    {{form.titulo(size=40)}}<br>
+
+</p>
+<p class="Formulario">
+    {{form.original.label}}<br>
+    {{form.original(size=40)}}<br>
+
+</p>
+<p class="Formulario">
+    {{form.genero.label}}<br>
+    {{form.genero(size=40)}}<br>
+
+</p>
+<p class="Formulario">
+    {{form.duracion.label}}<br>
+    {{form.duracion(size=40)}}<br>
+
+</p>
+<p class="Formulario">
+    {{form.resumen.label}}<br>
+    {{form.resumen(size=40)}}<br>
+
+</p>
+<p class="Formulario">
+    {{form.reparto.label}}<br>
+    {{form.reparto(size=40)}}<br>
+
+</p>
+<p class="Formulario">
+    {{form.director.label}}<br>
+    {{form.director(size=40)}}<br>
+
+</p>
+<p class="buton">
+    {{form.ingb()}}
+</p>
+
+</form>
+
+{% endblock %}
+
+{% block carga%}
+{%if p==1:%}
+<form action="/upload1" method="POST" enctype="multipart/form-data">   
+{%elif p==2:%}
+<form action="/upload2" method="POST" enctype="multipart/form-data">   
+{%elif p==3:%}
+<form action="/upload3" method="POST" enctype="multipart/form-data">   
+{%elif p==4:%}
+<form action="/upload4" method="POST" enctype="multipart/form-data">   
+{%elif p==5:%}
+<form action="/upload5" method="POST" enctype="multipart/form-data">   
+{%elif p==6:%}
+<form action="/upload6" method="POST" enctype="multipart/form-data">   
+{%elif p==7:%}
+<form action="/upload7" method="POST" enctype="multipart/form-data">   
+{%elif p==8:%}
+<form action="/upload8" method="POST" enctype="multipart/form-data">   
+{%elif p==9:%}
+<form action="/upload9" method="POST" enctype="multipart/form-data">   
+{%elif p==10:%}
+<form action="/upload10" method="POST" enctype="multipart/form-data">   
+{%endif%}
+{% endblock %}

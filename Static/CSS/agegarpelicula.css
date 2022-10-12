@@ -76,21 +76,21 @@ nav li:hover > ul {
     margin-left: 2%;
 }
 .drag-area:hover {
-    background-color: rgba(61, 61, 85, 0.4);
+    background-color:rgba(120, 120, 184, 0.678);
     color: black;
-    border: 2px dashed #0E3FF5;
+    border: 5px dashed #0E3FF5;
 }
 .drag-area1:hover {
-    background-color: rgba(61, 61, 85, 0.4);
+    background-color: rgba(120, 120, 184, 0.678);
     color: black;
-    border: 2px dashed #0E3FF5;
+    border: 5px dashed #0E3FF5;
 }
 .drag-area1{
     border: 5px dashed #000668;
     height: 300px;
     width: 45%;
     border-radius: 5px;
-    margin-top: 25%;
+    margin-top: 20%;
     margin-left: 2%;
     display: flex;
     align-items: center;
@@ -104,8 +104,10 @@ nav li:hover > ul {
     color: black;
     border: 2px dashed #0E3FF5;
 }
-.drag-area button{
+
+#uploadFile{
     padding: 10px 25px;
+    margin-top: 15px;
     font-size: 15px;
     border: 0;
     outline: none;
@@ -113,24 +115,26 @@ nav li:hover > ul {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+#enviarimg{
+    padding: 20px 75px;
+    font-size: 19px;
+    border: 10px;
+    margin-left: 300px;
+    margin-top: 720px;
+    background-color: #000668;
+    color: floralwhite;
+}
+.pagprin{
+    display: flex;
 }
 
-.drag-area1 button{
-    padding: 10px 25px;
-    font-size: 15px;
-    border: 0;
-    outline: none;
-    background-color: cornflowerblue;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
 .info{
-    width: 45%;
+    width: 40%;
     background: #000668;
     padding: 30px;
     margin-top: 10px;
-    margin-left: 50%;
+    margin-left: 25%;
     border-radius: 4px;
     font-family: 'calibri';
     color: floralwhite;
@@ -180,3 +184,37 @@ nav li:hover > ul {
     border-bottom: 1px solid;
     font-size: 20px;
 }
+.FormularioT{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #ECAB00;
+}
+.Formulario{
+    font-size: 22px;
+    font-weight: bold;
+}
+.Formulario input{ 
+    width: 100%;
+    background-color: rgba(41, 41, 121, 0.432);
+    padding: 10px;
+    border-radius: 14px;
+    margin-top: 1%;
+    margin-bottom: 16px;
+    border: 1px solid #E7E7F6;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: floralwhite;
+}
+
+.buton input{
+    width: 100%;
+    background: #ECAB00;
+    border: none;
+    padding: 12px;
+    color: #000668;
+    margin: 16px;
+    font-size: 20px;
+    font-weight: bold;
+} 
+ 

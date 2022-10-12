@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='CSS/cartelera.css')}}">
-    <title>Cartelera</title>
+    <title</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 <a href="/Opinion">Tu opinión</a>
                 
                 <ul class="nav">
-                <li><a href="#" class="ajustes">Ajustes</a>
+                <li><a href="/Pelicula1" class="ajustes">Ajustes</a>
                     <ul>
                     <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
                     <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
@@ -34,63 +34,63 @@
     </header>
     <div class="Recomendados">
         <div class="contenedor-titulo">
-            <h2>Cartelera</h2>
+            <h2</h2>
         </div>
         <div class="Contenedor-princpipal" >
             <div class="Contenedor-peliculas">
                 <div class="Pelis">
                     <div class="PeliculasR">
-                        <a href="Pest_Pelicula1.html"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P1/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">Spiderman Sin camino a casa</h4>
-                        <h4 class="gen">Acción, Aventura</h4>
+                        <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Admin/P1/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[0]}}</h4>
+                        <h4 class="gen">{{gene[0]}}/h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="Pest_Pelicula2.html"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P2/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">El télefono negro</h4>
-                        <h4 class="gen">Terror, Thriller</h4>
+                        <a href="/Pelicula2"><img src="{{url_for('static',filename='/image/Admin/P2/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[1]}}</h4>
+                        <h4 class="gen">{{gene[1]}}</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P3/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">Minions: el origen de gru</h4>
-                        <h4 class="gen">Infantil, Acción, Aventura</h4>
+                        <a href="/Pelicula3"><img src="{{url_for('static',filename='/image/Admin/P3/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[2]}}</h4>
+                        <h4 class="gen">{{gene[2]}}</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P4/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">TopGun Maverick</h4>
-                        <h4 class="gen">Acción, Aventura, Drama</h4>
+                        <a href="/Pelicula4"><img src="{{url_for('static',filename='/image/Admin/P4/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[3]}}</h4>
+                        <h4 class="gen">{{gene[3]}}</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P5/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">Pinocho</h4>
-                        <h4 class="gen">Cuento de hadas, Ficción de aventuras</h4>
+                        <a href="/Pelicula5"><img src="{{url_for('static',filename='/image/Admin/P5/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[4]}}</h4>
+                        <h4 class="gen">{{gene[4]}}</h4>
                      
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P6/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">Emergencia en el aire</h4>
-                        <h4 class="gen">Acción, Drama, Suspenso</h4>
+                        <a href="/Pelicula6"><img src="{{url_for('static',filename='/image/Admin/P6/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[5]}}</h4>
+                        <h4 class="gen">{{gene[5]}}</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P7/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">Invitación al infierno</h4>
-                        <h4 class="gen">Terror, Suspenso</h4>
+                        <a href="/Pelicula7"><img src="{{url_for('static',filename='/image/Admin/P7/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[6]}}</h4>
+                        <h4 class="gen">{{gene[6]}}</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P8/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">Cuando el Diablo Llama</h4>
-                        <h4 class="gen">Terror, Suspenso</h4>
+                        <a href="/Pelicula8"><img src="{{url_for('static',filename='/image/Admin/P8/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[7]}}</h4>
+                        <h4 class="gen">{{gene[7]}}</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P9/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">La bestia</h4>
-                        <h4 class="gen">Acción,aventura</h4>
+                        <a href="/Pelicula9"><img src="{{url_for('static',filename='/image/Admin/P9/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[8]}}</h4>
+                        <h4 class="gen">{{gene[8]}}</h4>
                     </div>
                 
                    
                     <div class="PeliculasR">
-                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P10/Poster.jpg')}}" alt=""></a>
-                        <h4 class="piepel">¡Nop!</h4>
-                        <h4 class="gen">Horror, Suspenso</h4>
+                        <a href="/Pelicula10"><img src="{{url_for('static',filename='/image/Admin/P10/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">{{Datos[9]}}</h4>
+                        <h4 class="gen">{{gene[9]}}</h4>
                     </div>
                 </div>
             </div>
