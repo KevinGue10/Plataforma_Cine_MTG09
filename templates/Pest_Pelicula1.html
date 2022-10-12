@@ -4,39 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/Pest_Pel.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/Pest_Pel.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
-    <title>Spiderman sin camino a casa</title>
+    <title>{{Datos[1]}}</title>
 </head>
 <body>
     <header>
         <div class="contenedor">
-            <h2 class="logos">Royal Films: Multicine Unicentro</h2>
+            <h2 class="logo">Royal Films: Multicine Unicentro</h2>
             <nav>
-                <a href="Pagina_inicial.html">Inicio</a>
-                <a href="Cartelera.html">Cartelera</a>
-                <a href="Inicio_sesion.html">Iniciar sesión</a>
-                <a href="Registro.html">Registro</a>
-                <a href="opinion.html">Tu opinión</a>
+                <a href="/">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises">Iniciar sesión</a>
+                <a href="/Registro">Registro</a>
+                <a href="/Opinion">Tu opinión</a>
+                
                 <ul class="nav">
-                    <li><a href="#" class="ajustes">Ajustes</a>
-                        <ul>
-                        <li><a href="agregarpelicula.html" class="ajustes">Agregar pelicula</a></li>
-                        <li><a href="Gestionarpelicula.html" class="ajustes">Gestionar peliculas</a></li>
-                        <li><a href="gestinarusuarios.html" class="ajustes">Gestionar usuarios</a></li>
-                        </ul>
-                    </li>
+                <li><a href="#" class="ajustes">Ajustes</a>
+                    <ul>
+                    <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
+                    <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
                     </ul>
+                </li>
+                </ul>
+
             </nav>
         </div>
     </header>
 <main>
-    <div class="postfondo1">
-        <div class="contenedor">
-            <h1 class="Titulo-p">Spiderman sin camino a casa </h1>
+    <div class="postfondo">
+        {% block back %}
+        <div class="con1">
+        {% endblock %}
+            <h1 class="Titulo-p">{{Datos[1]}}</h1>
             <div class="descp"> 
-                <h4 class="duracion">159 min</h4>
-                <h4 class="cat">Accion Aventura +12</h4>
+                <h4 class="duracion">{{Datos[4]}} min</h4>
+                <h4 class="cat">{{Datos[3]}}</h4>
             </div>
            
         </div>
@@ -45,7 +48,11 @@
    <div class="contenido">
         <div class="cont-contenido">
             <div class="post">
-                <a><img src="./image/Peliculas_mostradas/Spiderman.jpg" alt=""></a>
+            {% block img %}
+            <a><img src="{{ruta}}" alt=""></a>
+            {% endblock %}
+              
+               
                 <div class="estrellas">                              
                     <!-- Estrella full -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="star star-fill" viewBox="0 0 16 16">
@@ -72,36 +79,34 @@
 
             </div>
             <div class="sinop">
-                    <p>Por primera vez en la historia cinematográfica de Spider-Man, se revela la identidad de nuestro 
-                        amigable héroe vecino, lo que pone sus responsabilidades de superhéroe en conflicto con su vida 
-                        normal y pone en riesgo a quienes más le importan. Cuando solicita la ayuda del Doctor Strange 
-                        para restaurar su secreto, el hechizo abre un agujero en su mundo, liberando a los villanos más 
-                        poderosos que jamás hayan luchado contra un Spider-Man en cualquier universo. Ahora, Peter tendrá 
-                        que superar su mayor desafío hasta el momento, que no solo alterará para siempre su propio futuro
-                        , sino el futuro del Multiverso.</p>
+               
+                    <p>{{Datos[5]}}</p>
                         <div class="infop">
                             <div class="def">  
                             <h5 class="nchr">Titulo:</h5>
-                            <h5 class="chr">Spider-Man Sin camino a casa</h5>
+                            <h5 class="chr">{{Datos[1]}}</h5>
+                           
                         </div>
                         <div class="def">  
                             <h5 class="nchr">Original:</h5>
-                            <h5 class="chr">Spider-Man: No Way Home</h5>
+                            <h5 class="chr">{{Datos[2]}}</h5>
                         </div>
+                        
                         <div class="def">  
                             <h5 class="nchr">Reparto:</h5>
-                            <h5 class="chr">Tom Holland, Zendaya, Benedict Cumberbatch, Jon Favreau, Jacob Batalon y Marisa Tomei</h5>
+                            <h5 class="chr">{{Datos[6]}}</h5>
                         </div>      
                         <div class="def">  
                             <h5 class="nchr">Director:</h5>
-                            <h5 class="chr">Jon Watts</h5></div>
-                    
-                    </div>      
-                    <button role="button" class="boton">Comprar ticket</button>
-
+                            <h5 class="chr">{{Datos[7]}}</h5></div>
+                    </div>
+        
+                    {% block tick %}      
+              
+                    {% endblock%}
 
             </div>
-
+        
         </div>
 
 
@@ -114,27 +119,33 @@
         <div class="Contenedor-peliculas">
             <div class="Pelis">
                 <div class="PeliculasR">
-                    <a href="Pest_Pelicula1.html"><img src="./image/Peliculas_mostradas/Spiderman.jpg" alt=""></a>
-                    <h4 class="piepel">Spiderman Sin camino a casa </h4>
+                    
+                    <a href="/Pelicula1"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P1/Poster.jpg')}}" alt=""></a>
+                    <h4 class="piepel" id="RPelicula1">{{nm[0]}} </h4>
                 </div>
                 <div class="PeliculasR">
-                    <a href="Pest_Pelicula2.html"><img src="./image/Peliculas_mostradas/Blackphone.jpg" alt=""></a>
-                    <h4 class="piepel">El télefono negro</h4>
+                    <a href="/Pelicula2"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P2/Poster.jpg')}}" alt=""></a>
+                    <h4 class="piepel" id="RPelicula2">{{nm[1]}}</h4>
                 </div>
                 <div class="PeliculasR">
-                    <a href="Pest_Pelicula3.html"><img src="./image/Peliculas_mostradas/Minions.jpg" alt=""></a>
-                    <h4 class="piepel">Minions: el origen de gru</h4>
+                    <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P3/Poster.jpg')}}" alt=""></a>
+                    <h4 class="piepel" id="RPelicula3">{{nm[2]}}</h4>
                 </div>
                 <div class="PeliculasR">
-                    <a href="#"><img src="./image/Peliculas_mostradas/Topgun.jpg" alt=""></a>
-                    <h4 class="piepel">TopGun Maverick</h4>
+                    <a href="#"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P4/Poster.jpg')}}" alt=""></a>
+                    <h4 class="piepel" id="RPelicula4">{{nm[3]}}</h4>
                 </div>
                 <div class="PeliculasR">
-                    <a href="#"><img src="./image/Peliculas_mostradas/Pinocho.jpg" alt=""></a>
-                    <h4 class="piepel">Pinocho</h4>
+                    <a href="#"><img src="{{url_for('static',filename='/image/Admin/Principales en cartelera/P5/Poster.jpg')}}" alt=""></a>
+                    <h4 class="piepel" id="RPelicula5">{{nm[4]}}</h4>
                 </div>
             </div>
+        </div>
 
+
+    </div>
+
+</div>
 
 </main>
 

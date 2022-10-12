@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/cartelera.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/cartelera.css')}}">
     <title>Cartelera</title>
 </head>
 
@@ -14,21 +14,21 @@
         <div class="contenedor">
             <h2 class="logo">Royal Films: Multicine Unicentro</h2>
             <nav>
-                <a href="Pagina_inicial.html">Inicio</a>
-                <a href="Cartelera.html" class="activo">Cartelera</a>
-                <a href="Inicio_sesion.html">Iniciar sesión</a>
-                <a href="Registro.html">Registro</a>
-                <a href="opinion.html">Tu opinión</a>
+                <a href="/" >Inicio</a>
+                <a href="/Cartelera" class="activo">Cartelera</a>
+                <a href="/Inises">Iniciar sesión</a>
+                <a href="/Registro">Registro</a>
+                <a href="/Opinion">Tu opinión</a>
+                
                 <ul class="nav">
-                    <li><a href="#" class="ajustes">Ajustes</a>
-                        <ul>
-                        <li><a href="agregarpelicula.html" class="ajustes">Agregar pelicula</a></li>
-                        <li><a href="Gestionarpelicula.html" class="ajustes">Gestionar peliculas</a></li>
-                        <li><a href="gestinarusuarios.html" class="ajustes">Gestionar usuarios</a></li>
-                        </ul>
-                    </li>
+                <li><a href="#" class="ajustes">Ajustes</a>
+                    <ul>
+                    <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
+                    <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
                     </ul>
-    
+                </li>
+                </ul>
+
             </nav>
         </div>
     </header>
@@ -40,54 +40,55 @@
             <div class="Contenedor-peliculas">
                 <div class="Pelis">
                     <div class="PeliculasR">
-                        <a href="Pest_Pelicula1.html"><img src="./image/Cartelera/Spiderman.jpg" alt=""></a>
+                        <a href="Pest_Pelicula1.html"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P1/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">Spiderman Sin camino a casa</h4>
                         <h4 class="gen">Acción, Aventura</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="Pest_Pelicula2.html"><img src="./image/Cartelera/Blackphone.jpg" alt=""></a>
+                        <a href="Pest_Pelicula2.html"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P2/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">El télefono negro</h4>
                         <h4 class="gen">Terror, Thriller</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="Pest_Pelicula3.html"><img src="./image/Cartelera/Minions.jpg" alt=""></a>
+                        <a href="Pest_Pelicula3.html"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P3/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">Minions: el origen de gru</h4>
                         <h4 class="gen">Infantil, Acción, Aventura</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/Topgun.jpg" alt=""></a>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P4/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">TopGun Maverick</h4>
                         <h4 class="gen">Acción, Aventura, Drama</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/diablollama.jpg" alt=""></a>
-                        <h4 class="piepel">Cuando el Diablo Llama</h4>
-                        <h4 class="gen">Terror, Suspenso</h4>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P5/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Pinocho</h4>
+                        <h4 class="gen">Cuento de hadas, Ficción de aventuras</h4>
+                     
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/emergenaire.jpg" alt=""></a>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P6/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">Emergencia en el aire</h4>
                         <h4 class="gen">Acción, Drama, Suspenso</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/inviinfierno.jpg" alt=""></a>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P7/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">Invitación al infierno</h4>
                         <h4 class="gen">Terror, Suspenso</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/Pinocho.jpg" alt=""></a>
-                        <h4 class="piepel">Pinocho</h4>
-                        <h4 class="gen">Cuento de hadas, Ficción de aventuras</h4>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P8/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">Cuando el Diablo Llama</h4>
+                        <h4 class="gen">Terror, Suspenso</h4>
                     </div>
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/supermascotas.jpg" alt=""></a>
-                        <h4 class="piepel">DC Liga de SúperMascotas</h4>
-                        <h4 class="gen">Comedia, Acción</h4>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P9/Poster.jpg')}}" alt=""></a>
+                        <h4 class="piepel">La bestia</h4>
+                        <h4 class="gen">Acción,aventura</h4>
                     </div>
                 
                    
                     <div class="PeliculasR">
-                        <a href="#"><img src="./image/Cartelera/nop.jpg" alt=""></a>
+                        <a href="#"><img src="{{url_for('static',filename='/image/Admin/Cartelera/P10/Poster.jpg')}}" alt=""></a>
                         <h4 class="piepel">¡Nop!</h4>
                         <h4 class="gen">Horror, Suspenso</h4>
                     </div>
