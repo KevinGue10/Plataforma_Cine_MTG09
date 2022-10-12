@@ -204,9 +204,9 @@ font-size: 20px;
 
     color: #ECAB00;
 }
-.contenido .cont-contenido .sinop .boton{
+.botona{
     background: rgba(0, 81, 255, 0.952);
-    margin-top: 30px;
+    margin-top: 150px;
     color:rgb(255, 255, 255);
     border: none;
     padding: 2% 60px;
@@ -217,7 +217,7 @@ font-size: 20px;
     border-radius: 10px;
     font-weight: bold;
 }
-.contenido .cont-contenido .sinop .boton:hover{
+.botona:hover{
     background: #ECAB00;
     color: #000668;
 

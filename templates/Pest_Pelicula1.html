@@ -79,16 +79,19 @@
 
             </div>
             <div class="sinop">
+               
                     <p>{{Datos[5]}}</p>
                         <div class="infop">
                             <div class="def">  
                             <h5 class="nchr">Titulo:</h5>
                             <h5 class="chr">{{Datos[1]}}</h5>
+                           
                         </div>
                         <div class="def">  
                             <h5 class="nchr">Original:</h5>
                             <h5 class="chr">{{Datos[2]}}</h5>
                         </div>
+                        
                         <div class="def">  
                             <h5 class="nchr">Reparto:</h5>
                             <h5 class="chr">{{Datos[6]}}</h5>
@@ -96,13 +99,14 @@
                         <div class="def">  
                             <h5 class="nchr">Director:</h5>
                             <h5 class="chr">{{Datos[7]}}</h5></div>
-                    
-                    </div>      
-                    <button role="button" class="boton">Comprar ticket</button>
-
+                    </div>
+        
+                    {% block tick %}      
+              
+                    {% endblock%}
 
             </div>
-
+        
         </div>
 
 
