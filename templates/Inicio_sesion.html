@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/inicio.css')}}">
     <title>Inicia sesion</title>
 </head>
 <body>
@@ -13,30 +12,38 @@
         <div class="contenedor">
         <h2 class="logo">Royal Films: Multicine Unicentro</h2>
         <nav>
-            <a href="Pagina_inicial.html">Inicio</a>
-            <a href="Cartelera.html">Cartelera</a>
-            <a href="Inicio_sesion.html" class="activo" >Iniciar sesión</a>
-            <a href="Registro.html">Registro</a>
-            <a href="opinion.html">Tu opinión</a>
+            <a href="/">Inicio</a>
+            <a href="/Cartelera">Cartelera</a>
+            <a href="/Inises" class="activo" >Iniciar sesión</a>
+            <a href="/Registro">Registro</a>
+            <a href="/Opinion">Tu opinión</a>
             <ul class="nav">
                 <li><a href="#" class="ajustes">Ajustes</a>
                     <ul>
-                    <li><a href="agregarpelicula.html" class="ajustes">Agregar pelicula</a></li>
-                    <li><a href="Gestionarpelicula.html" class="ajustes">Gestionar peliculas</a></li>
-                    <li><a href="gestinarusuarios.html" class="ajustes">Gestionar usuarios</a></li>
+                    <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
+                    <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
                     </ul>
                 </li>
-                </ul>
-        </nav>
+            </ul>
     </div>
 </header>
-    <section class="formularioingreso">
+ 
+    <form action="{{ url_for('inisesion') }}" method="post" novalidate class="formularioingreso">
+       
         <h4>Inicia sesion</h4>
-        <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-        <input class="controls" type="password" name="contraseña" id="correos" placeholder="Ingrese su contraseña">
-        <input class="button" type="submit" name="" value="Ingresar">
+        <p>
+            {{form.usuario.label}}<br>
+            {{form.usuario(class="controls")}}<br>
+        </p>
+        <p>
+            {{form.contraseña.label}}
+            {{form.contraseña(class="controls")}}
+        </p>
+     
+        <p>
+            {{form.enviar(class="button")}}
+        </p>
+    </form>
 
-    </section>
-    
 </body>
 </html>

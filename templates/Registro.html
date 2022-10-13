@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style2.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style2.css')}}">
+    <script src="{{url_for('static',filename='/JS/validar.js')}}"></script>
     <title>Formulario de registro</title>
 </head>
 <body>
@@ -12,35 +13,37 @@
         <div class="contenedor">
             <h2 class="logo">Royal Films: Multicine Unicentro</h2>
             <nav>
-                <a href="Pagina_inicial.html" >Inicio</a>
-                <a href="Cartelera.html">Cartelera</a>
-                <a href="Inicio_sesion.html">Iniciar sesión</a>
-                <a href="Registro.html" class="activo">Registro</a>
-                <a href="#">Tu opinión</a>
+                <a href="/" >Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises">Iniciar sesión</a>
+                <a href="/Registro" class="activo">Registro</a>
+                <a href="/Opinion">Tu opinión</a>
                 <ul class="nav">
                     <li><a href="#" class="ajustes">Ajustes</a>
                         <ul>
-                        <li><a href="agregarpelicula.html" class="ajustes">Agregar pelicula</a></li>
-                        <li><a href="Gestionarpelicula.html" class="ajustes">Gestionar peliculas</a></li>
-                        <li><a href="gestinarusuarios.html" class="ajustes">Gestionar usuarios</a></li>
+                        <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
+                        <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
                         </ul>
                     </li>
                     </ul>
-    
-            
-            </nav>
         </div>
     </header>
-    <section class="formregistro">
-        <h4>Formulario Registro</h4>
-        <input class="controls"  type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
-        <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido">
+
+    <form action="{{ url_for('Usuarios') }}" method="post" name="formRegistro" class="formregistro" onSubmit="return validar_registro()">
+      
+
+        <h4>Formulario Registro</h4>      
+        {{frm.nombre.label}}
+        {{frm.nombre(class="controls")}} 
+        {{frm.apellido.label}}
+        {{frm.apellido(class="controls")}}       
         <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
-        <input class="controls" type="password" name="correo" id="correos" placeholder="Ingrese su contraseña">
+        {{frm.contraseña.label}}
+        {{frm.contraseña}}
         <p>Acepto los <a href="#">terminos y condiciones</a></p>
         <input class="botons" type="submit" value="Registrar">
         <p>¿Ya tienes una cuenta?<a href="#">Inicia sesion</a></p>
-    </section>
+    </form>
     
     
 </body>
