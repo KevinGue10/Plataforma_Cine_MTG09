@@ -30,13 +30,27 @@
         </nav>
     </div>
 </header>
-    <section class="formularioingreso">
-        <h4>Inicia sesion</h4>
-        <input class="controls" type="text" name="usuario" id="nombre" value="" placeholder="Usuario">
-        <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
-        <input class="button" type="submit" name="" value="Ingresar">
+ {%extend "base.html"%}
+ {% block contenido %}
 
-    </section>
-    
+    <form action="" method="post" novalidate class="formularioingreso">
+        {{form.hidden_tag()}}
+        <h4>Inicia sesion</h4>
+        <p>
+            {{form.usuario.label}}<br>
+            {{form.usuario(size=30)}}<br>
+        </p>
+        <p>
+            {{form.contraseña.label}}
+            {{form.contraseña(size=30)}}
+        </p>
+        <p>
+            {{form.recordar}} {{form.recordar.label}}
+        </p>
+        <p>
+            {{form.enviar()}}
+        </p>
+    </form>
+{%endblock%}   
 </body>
 </html>

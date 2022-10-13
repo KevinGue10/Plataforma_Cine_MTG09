@@ -1,29 +1,19 @@
-<<<<<<< HEAD
-from crypt import methods
-from distutils.log import debug, error
-from email import message
-import email
 from flask import Flask,render_template,redirect,request,url_for, session,flash
-import utils
-from email.message import EmailMessage
-import smtplib
-import os
-
-app=Flask(__name__)
-app.secret_key=os.urandom(30)
-
-nombre1='Spiderman Sin camino a casa'
-=======
-from flask import Flask,render_template
 import os
 import sqlite3
 from sqlite3 import Error
 from db import get_db,close_db
 from quer import nomb
-
+#from crypt import methods
+from distutils.log import debug, error
+from email import message
+import email
+#import utils
+from email.message import EmailMessage
+import smtplib
 app=Flask(__name__)
+app.secret_key=os.urandom(30)
 
->>>>>>> kevin
 @app.route('/')
 def index():
     db=get_db()
@@ -60,7 +50,6 @@ def Gusuar():
 
 @app.route('/Pelicula1/')
 def peli1():
-<<<<<<< HEAD
     return render_template('Pest_Pelicula1.html')
 @app.route('/')
 def registrar():    
@@ -111,7 +100,6 @@ def send_email(credentials, receiver, subject, messade):
     smtp.login(credentials['user'],credentials['password'])
     smtp.sendmail(credentials['user'],receiver,email.as_string())
     smtp.quit()
-=======
     
     db=get_db()
     nm=nomb(db)
@@ -155,5 +143,4 @@ def peli5():
 def tiquete1():
      return render_template('rutas2.html',p=1)   
 
->>>>>>> kevin
     
