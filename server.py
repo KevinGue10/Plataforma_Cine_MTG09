@@ -18,8 +18,6 @@ import email
 from email.message import EmailMessage
 import smtplib
 app=Flask(__name__)
-app.secret_key=os.urandom(30)
-
 app.secret_key=os.urandom(24)
 
 
@@ -82,8 +80,6 @@ def Gusuar():
 
 @app.route('/Pelicula<string:p>/')
 def peli1(p):
-    
-
     db=get_db()
     nm=nomb(db)
     Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()

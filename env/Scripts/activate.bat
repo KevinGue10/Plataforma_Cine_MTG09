@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\User\Desktop\Plataforma_Cine_MTG09\env
+set VIRTUAL_ENV=D:\Universidad\MINTIC\CICLO 3\Plataforma_Cine\env
 
 if not defined PROMPT set PROMPT=$P$G
 

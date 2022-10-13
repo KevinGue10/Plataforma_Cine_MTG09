@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\User\Desktop\Plataforma_Cine_MTG09\env"
+VIRTUAL_ENV="D:\Universidad\MINTIC\CICLO 3\Plataforma_Cine\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
