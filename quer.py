@@ -35,13 +35,3 @@ def gene(dba):
     Datos=[Data[3],Data1[3],Data2[3],Data3[3],Data4[3],Data5[3],Data6[3],Data7[3],Data8[3],Data9[3]]
 
     return Datos
-
-def mdato(p):
-    db=get_db()
-    snm=db.execute('Select * from Gpeliculas where ID= ?',p).fetchone()
-    return 'cambio'
-    
-def agp(nm,nombre,original,genero,duracion,resumen,reparto,director):
-    db=get_db()
-    db.execute("UPDATE Gpeliculas SET name ='"+nombre+"' , Original = '"+original+"', Generos = "+
-    genero+", Duracion = '"+duracion+"', Resumen = '"+resumen+"', Reparto = '"+reparto+"', Director= '"+director+"' WHERE ID ="+nm )

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/opinion.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/opinion.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
 
     <title>Royal Films: Unicentro</title>
@@ -16,18 +16,17 @@
         <div class="contenedor">
             <h2 class="logo">Royal Films: Multicine Unicentro</h2>
             <nav>
-                <a href="Pagina_inicial.html" class="activo">Inicio</a>
-                <a href="Cartelera.html">Cartelera</a>
-                <a href="Inicio_sesion.html">Iniciar sesión</a>
-                <a href="Registro.html">Registro</a>
-                <a href="#">Tu opinión</a>
+                <a href="/">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises" >Iniciar sesión</a>
+                <a href="/Registro">Registro</a>
+                <a href="/Opinion" class="activo" >Tu opinión</a>
                 
                 <ul class="nav">
                 <li><a href="#" class="ajustes">Ajustes</a>
                     <ul>
-                    <li><a href="agregarpelicula.html" class="ajustes">Agregar pelicula</a></li>
-                    <li><a href="Gestionarpelicula.html" class="ajustes">Gestionar peliculas</a></li>
-                    <li><a href="gestinarusuarios.html" class="ajustes">Gestionar usuarios</a></li>
+                        <li><a href="/Gestionarpelicula" class="ajustes">Gestionar peliculas</a></li>
+                        <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
                     </ul>
                 </li>
                 </ul>
@@ -41,26 +40,27 @@
             <div class="Titulopes">
                 <h2>Comentario y calificaciones</h2>
             </div>
-            <div class="contenedor-op">
-                <select id="nmov" name="cars">
-                    <option value="Pelicula">Escoger Pelicula</option>
-                    <option value="spiderman">Spider-Man sin camino a casa</option>
-                    <option value="Blackphone">El teléfono negro</option>
-                    <option value="Minions">Minions: el origen de gru</option>
-                  </select>
 
-                <div class="textp">
-                    <h4>Calificación</h4>
-                    <input class="clasinc" type="number" name="calificacion" value="" placeholder="">
-                </div>
-                <div class="textp">
-                    <h4>Agregar comentario</h4>
-                    <input class="clasin" type="text" name="comentario" value="" placeholder="ingrese comentario">
-                </div>
-
-            </div>
 
         </div>
+        <form action="/Opinion" method="post" class="contenedor-op">
+        <p>
+            {{form.pelicula.label}}<br> {{form.pelicula}}<br>
+        </p> 
+        <p>
+            {{form.calificacion.label}}<br> {{form.calificacion}}<br>
+        </p>
+        <p class="Formulario">
+            {{form.comentario.label}}<br> {{form.comentario}}<br>
+        </p>    
+        <p>
+            {{form.usuario.label}}<br> {{form.usuario}}<br>
+        </p>    
+        <p class="buton">
+            {{form.enviar}}
+        </p>    
+            {{form.hidden_tag()}}
+        </form>
     </main>
 </body>
 

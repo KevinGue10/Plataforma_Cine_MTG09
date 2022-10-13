@@ -1,0 +1,112 @@
+{% extends "Compratiquet.html" %}
+{% block formulario%}
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    
+    <h4 class="FormularioT">
+       Boletos
+    </h4>
+    <p class="Formulario">
+        {{form.funcion.label}}------{{form.cantidad.label}}  <br>
+        {{form.funcion}} {{form.cantidad}}  
+        <br>
+    </p>
+    <p class="boton">
+        {{form.enviar()}}
+    </p>
+</form>
+    
+<table class="TBFormulario" border="2">
+
+    <tr>
+        <td>Precio</td>
+        <td>Subtotal</td>
+    </tr>
+    <tr>
+        <td> {{precio}} </td>
+        <td>{{subtotal}}</td>
+    </tr>
+
+</table>
+
+           
+
+       
+        
+    </p>
+
+{% endblock %}
+{% block img %}
+
+{%if p==1:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P1/Poster.jpg')}}" alt=""></a>
+{%elif p==2:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P2/Poster.jpg')}}" alt=""></a>
+{%elif p==3:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P3/Poster.jpg')}}" alt=""></a>
+{%elif p==4:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P4/Poster.jpg')}}" alt=""></a>
+{%elif p==5:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P5/Poster.jpg')}}" alt=""></a>
+{%elif p==6:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P6/Poster.jpg')}}" alt=""></a>
+{%elif p==7:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P7/Poster.jpg')}}" alt=""></a>
+{%elif p==8:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P8/Poster.jpg')}}" alt=""></a>
+{%elif p==9:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P9/Poster.jpg')}}" alt=""></a>
+{%elif p==10:%}
+<a><img src="{{url_for('static',filename='/image/Admin/P10/Poster.jpg')}}" alt=""></a>
+{%else%}
+<h1>Ninguno</h1>
+{%endif%}
+{% endblock %}
+
+{% block back %}
+{%if p==1:%}
+<div class="con1">
+{%elif p==2:%}
+<div class="con2">
+{%elif p==3:%}
+<div class="con3">
+{%elif p==4:%}
+<div class="con4">
+{%elif p==5:%}
+<div class="con5">
+{%elif p==6:%}
+<div class="con6">
+{%elif p==7:%}
+<div class="con7">
+{%elif p==8:%}
+<div class="con8">
+{%elif p==9:%}
+<div class="con9">
+{%elif p==10:%}
+<div class="con10">
+{%endif%}
+{% endblock %}
+
+{% block tick %}
+{%if p==1:%}
+<a class="boton" href="/Tick1">Comprar ticket</a>
+{%elif p==2:%}
+<a class="boton" href="/Tick2">Comprar ticket</a>
+{%elif p==3:%}
+<a class="botona" href="/Tick3">Comprar ticket</a>
+{%elif p==4:%}
+<a class="boton" href="/Tick4">Comprar ticket</a>
+{%elif p==5:%}
+<a class="boton" href="/Tick5">Comprar ticket</a>
+{%elif p==6:%}
+<a class="boton" href="/Tick6">Comprar ticket</a>
+{%elif p==7:%}
+<a class="boton" href="/Tick7">Comprar ticket</a>
+{%elif p==8:%}
+<a class="boton" href="/Tick8">Comprar ticket</a>
+{%elif p==9:%}
+<a class="boton" href="/Tick9">Comprar ticket</a>
+{%elif p==10:%}
+<a class="boton" href="/Tick10">Comprar ticket</a>
+{%endif%}
+{% endblock %}

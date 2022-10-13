@@ -1,4 +1,3 @@
-from email import generator
 from flask import Flask,render_template,request,redirect,url_for
 import os
 import sqlite3
@@ -8,6 +7,8 @@ from quer import nomb,gene
 from form_pel import FormPel
 from werkzeug.utils import secure_filename
 from carpetas import rutc
+from forms import Opinion
+from Forms_tick import Ticket
 
 app=Flask(__name__)
 
@@ -34,10 +35,6 @@ def inises():
 @app.route('/Registro/')
 def regis():
     return render_template('Registro.html')
-
-@app.route('/Opinion/')
-def opinion():
-    return render_template('opinion.html')
 
 @app.route('/Agregarpelicula<string:p>/', methods=['GET','POST'])
 def Agpelicula(p):
@@ -74,15 +71,33 @@ def peli1(p):
     db=get_db()
     nm=nomb(db)
     Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()
-    print(p)
+    nom=Datos[1]
+    print(nom)
+    cal=db.execute("Select calificacion from opinion where pelicula='"+nom+"'").fetchall()
+    print(cal)
     r=int(p)
     return render_template('rutas.html',Datos=Datos,p=r,nm=nm)
 
 
-@app.route('/Tick1/')
-def tiquete1():
-     return render_template('rutas2.html',p=1)   
-
+@app.route('/Tick<string:p>/', methods=['GET','POST'])
+def peliti1(p):  
+    db=get_db()
+    nm=nomb(db)
+    total=0
+    precio=0
+    form = Ticket()
+    Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()
+    if (form.validate_on_submit()):
+        funcion=request.form['funcion']
+        cantidad=request.form['cantidad']
+        if funcion=='Funcion Estandar':
+            precio=10000
+        elif funcion=='Funcion VIP':
+            precio=16000
+        print(cantidad)
+        total=precio*int(cantidad)
+        print(total)
+    return render_template('rutas2.html',Datos=Datos,p=int(p),nm=nm,form=form,subtotal=total,precio=precio)
 
 def all_file(file):
     file=file.split('.')
@@ -109,5 +124,33 @@ def upload(p):
         print("permitido")
         fileb.save(os.path.join(UB,filenameb))
     
-    
     return redirect(url_for('Agpelicula',p=p))
+
+def sql_insert_products(pelicula,calificacion,comentario,usuario):
+    strsql="INSERT INTO opinion (pelicula,calificacion,comentario,usuario) VALUES('"+pelicula+"',"+calificacion+",'"+comentario+"','"+usuario+"');"
+    con=get_db()
+    cursorObj=con.cursor()
+    cursorObj.execute(strsql)
+    con.commit()
+    con.close()
+
+@app.route('/Opinion/', methods=['GET','POST'])
+def nuevo():
+    if request.method=="GET":
+        form = Opinion()
+        con = get_db()
+        pelis=nomb(con)
+        print(pelis)
+        form.pelicula.choices = pelis      
+        return render_template('opinion.html', form=form)
+    
+    if request.method=='POST':
+        peli = request.form["pelicula"]
+        cali = request.form["calificacion"]
+        cant = request.form["comentario"]
+        usua = request.form["usuario"]
+        sql_insert_products(peli,cali,cant,usua)
+        return "Comentario enviado"
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/Compratiquet.css')}}">
+    <title>{{Datos[1]}}</title>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logo">Royal Films: Multicine Unicentro</h2>
+            <nav>
+                <a href="/">Inicio</a>
+                <a href="/Cartelera">Cartelera</a>
+                <a href="/Inises">Iniciar sesión</a>
+                <a href="/Registro">Registro</a>
+                <a href="/Opinion">Tu opinión</a>
+                
+                <ul class="nav">
+                <li><a href="#" class="ajustes">Ajustes</a>
+                    <ul>
+                    <li><a href="/Gestionarpelicula"  class="ajustes">Gestionar peliculas</a></li>
+                    <li><a href="/Gestinarusuarios" class="ajustes">Gestionar usuarios</a></li>
+                    </ul>
+                </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="contenido">
+            <div class="cont-contenido">
+                <div class="post">
+                {% block img %}
+                <a><img src="{{ruta}}" alt=""></a>
+                {% endblock %}
+                
+
+            </div>
+            <div class="sinop">
+                    <p>{{Datos[5]}}</p>
+                        <div class="infop">
+                            <div class="def">  
+                            <h5 class="nchr">Titulo:</h5>
+                            <h5 class="chr">{{Datos[1]}}</h5>
+                        </div>
+                        <div class="def">  
+                            <h5 class="nchr">Original:</h5>
+                            <h5 class="chr">{{Datos[2]}}</h5>
+                        </div>
+                        <div class="def">  
+                            <h5 class="nchr">Reparto:</h5>
+                            <h5 class="chr">{{Datos[6]}}</h5>
+                        </div>      
+                        <div class="def">  
+                            <h5 class="nchr">Director:</h5>
+                            <h5 class="chr">{{Datos[7]}}</h5></div>
+   
+                    
+                    </div>
+                </div>
+
+            </div>
+    
+    
+       </div>
+       <div class="compra">
+        {% block formulario%}
+        
+        {% endblock%}
+       </div>
+      
+       <div class="asientos" > 
+        <a><img src="{{url_for('static',filename='/image/Asientos.jpg')}}" alt=""></a>  
+      </div>
+    </main>
+</body>

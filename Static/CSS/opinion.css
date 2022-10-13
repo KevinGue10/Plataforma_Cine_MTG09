@@ -112,3 +112,23 @@ nav li:hover > ul {
     font-size: 18px;
     line-height: 40px;
 }
+.Formulario{
+    font-size: 15px;
+}
+.Formulario input{ 
+    width: 100%;
+    padding: 20px;
+    font-family: 'calibri';
+    font-size: 15px;
+}
+
+.buton input{
+    width: 100%;
+    background: #ECAB00;
+    border: none;
+    padding: 12px;
+    color: #000668;
+    margin: 13px;
+    font-size: 15px;
+    font-weight: bold;
+}
