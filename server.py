@@ -1,6 +1,7 @@
 from flask import Flask,render_template,redirect,request,url_for, session,flash
 import os
 import sqlite3
+from form import Inicio,Registro
 from sqlite3 import Error
 from db import get_db,close_db
 from quer import nomb
@@ -14,6 +15,10 @@ import smtplib
 app=Flask(__name__)
 app.secret_key=os.urandom(30)
 
+
+
+@app.route("/home")
+@app.route("/index")
 @app.route('/')
 def index():
     db=get_db()
@@ -26,11 +31,14 @@ def cartelera():
 
 @app.route('/Inises/')
 def inises():
-    return render_template('Inicio_sesion.html')
+    form = Inicio()
+    return render_template('Inicio_sesion.html', form=form)
+    
 
 @app.route('/Registro/')
 def regis():
-    return render_template('Registro.html')
+    frm = Registro()
+    return render_template('Registro.html', frm=frm)
 
 @app.route('/Opinion/')
 def opinion():
@@ -50,57 +58,8 @@ def Gusuar():
 
 @app.route('/Pelicula1/')
 def peli1():
-    return render_template('Pest_Pelicula1.html')
-@app.route('/')
-def registrar():    
-    return render_template('Registro.html')
-@app.route('/Registro/',methods=('GET','POST'))
-def register():    
-    try:
-        if request.method== 'POST':
-            usuario= request.form['nombres']
-            password =request.form['contraseña']
-            email = request.form['correo']
-            error=None
-
-        if not utils.utils.isUsernameValid(usuario):
-                error="El nombre debe ser alfanumerico"
-                flash(error)
-                return render_template('Registro.html')
-        if not utils.utils.isEmailValid(email):
-                error="El correo no es valido"
-                flash(error)
-                return render_template('Registro.html')  
-        if not utils.utils.isPasswordValid(password):
-                error="La contraseña debe tener una minuscula,una mayuscula,un numero y minimo 8 caracteres"
-                flash(error)
-                return render_template('Registro.html')  
-        credentials={
-           'user':'alejandradv@uninorte.edu.co',
-           'password':'xxxxxx'     
-        }                    
-        send_email(credentials=credentials, receiver =email, 
-        subject='Activa tu cuenta', 
-        message='Bienvenido activa tu cuenta atraves de este link')
-        flash('Revisa tu correo para activar tu cuenta')
-        return render_template('Inicio_sesion.html')  
-      
-    except:
-        return f'Ocurrio un error'  
-
-def send_email(credentials, receiver, subject, messade):
-    email=EmailMessage()
-    email["From"]=credentials["user"]
-    email["To"]=receiver
-    email["Subject"]= subject
-    email.set_content(message)
-
-    smtp=smtplib.SMTP("smtp-mail.outlook.com",port=587)
-    smtp.starttls()
-    smtp.login(credentials['user'],credentials['password'])
-    smtp.sendmail(credentials['user'],receiver,email.as_string())
-    smtp.quit()
     
+
     db=get_db()
     nm=nomb(db)
     Datos=db.execute('Select * from Gpeliculas where ID=1').fetchone()
@@ -141,6 +100,52 @@ def peli5():
 
 @app.route('/Tick1/')
 def tiquete1():
-     return render_template('rutas2.html',p=1)   
+     return render_template('rutas2.html',p=1) 
+     
+       
+@app.route('/Registro/',methods=['POST'])
+def Usuarios():      
+ frm = Registro()
+   
+ username = frm.nombre.data
+ rol= 1
+ password = frm.contraseña.data
+            # Conecta a la BD
+ with sqlite3.connect("Pcine.db") as con:
+                cursor = con.cursor()  # Manipular la BD
+                # Prepara la sentencia SQL a ejecutar
+                cursor.execute("INSERT INTO usuario (rol,nombre, password) VALUES(?,?,?)", [
+                            rol,username, password])
+                # Ejecuta la sentencia SQL
+                con.commit()
+                return redirect("/")
+ 
+@app.route('/Inicio_sesion',methods=['POST'])
+def inisesion():    
+ frm = Inicio()
+ username = frm.usuario.data
+ password = frm.contraseña.data 
+ with sqlite3.connect("Pcine.db") as con:
+  con.row_factory = sqlite3.Row
+  cursor = con.cursor()
+  cursor.execute("SELECT * FROM usuario WHERE nombre = ? AND password = ?", [username, password])
+
+            # cursor.execute(f"SELECT username FROM usuario WHERE nombre = '{username}' AND password = '{pass_enc}'")
+ row = cursor.fetchone()
+ if row:
+                # Se crea la sesión
+    session['usuario'] = username
+    session['rol'] = row["rol"]
+    if session["rol"] == "1":
+      return redirect("/")
+    elif session["rol"] == "2":
+      return redirect("/")
+    elif session["rol"] == "3":
+      return redirect("/")
+    else:
+      flash(message="Usuario no válido") 
+       
+ return redirect("/")
+app.run(debug=True)
 
     
