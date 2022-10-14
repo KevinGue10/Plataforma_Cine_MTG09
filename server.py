@@ -1,7 +1,6 @@
-from flask import Flask,render_template,redirect,request,url_for, session,flash
+from flask import Flask,render_template,request,redirect,url_for
 import os
 import sqlite3
-from form import Inicio,Registro
 from sqlite3 import Error
 from db import get_db,close_db
 from quer import nomb,gene
@@ -10,19 +9,10 @@ from werkzeug.utils import secure_filename
 from carpetas import rutc
 from forms import Opinion
 from Forms_tick import Ticket
-#from crypt import methods
-from distutils.log import debug, error
-from email import message
-import email
-#import utils
-from email.message import EmailMessage
-import smtplib
+
 app=Flask(__name__)
+
 app.secret_key=os.urandom(24)
-
-
-@app.route("/home")
-@app.route("/index")
 @app.route('/')
 def index():
     db=get_db()
@@ -40,14 +30,11 @@ def cartelera():
 
 @app.route('/Inises/')
 def inises():
-    form = Inicio()
-    return render_template('Inicio_sesion.html', form=form)
-    
+    return render_template('Inicio_sesion.html')
 
 @app.route('/Registro/')
 def regis():
-    frm = Registro()
-    return render_template('Registro.html', frm=frm)
+    return render_template('Registro.html')
 
 @app.route('/Agregarpelicula<string:p>/', methods=['GET','POST'])
 def Agpelicula(p):
@@ -80,6 +67,7 @@ def Gusuar():
 
 @app.route('/Pelicula<string:p>/')
 def peli1(p):
+    
     db=get_db()
     nm=nomb(db)
     Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()
@@ -145,7 +133,6 @@ def sql_insert_products(pelicula,calificacion,comentario,usuario):
     cursorObj.execute(strsql)
     con.commit()
     con.close()
- 
 
 @app.route('/Opinion/', methods=['GET','POST'])
 def nuevo():
@@ -164,6 +151,5 @@ def nuevo():
         usua = request.form["usuario"]
         sql_insert_products(peli,cali,cant,usua)
         return "Comentario enviado"
-
 
 
