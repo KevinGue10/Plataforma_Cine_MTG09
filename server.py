@@ -152,4 +152,3 @@ def nuevo():
         sql_insert_products(peli,cali,cant,usua)
         return "Comentario enviado"
 
-
