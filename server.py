@@ -10,13 +10,6 @@ from werkzeug.utils import secure_filename
 from carpetas import rutc
 from forms import Opinion
 from Forms_tick import Ticket
-#from crypt import methods
-from distutils.log import debug, error
-from email import message
-import email
-#import utils
-from email.message import EmailMessage
-import smtplib
 
 app=Flask(__name__)
 
