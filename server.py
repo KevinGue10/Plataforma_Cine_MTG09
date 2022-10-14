@@ -1,6 +1,7 @@
-from flask import Flask,render_template,request,redirect,url_for
+from flask import Flask,render_template,redirect,request,url_for, session,flash
 import os
 import sqlite3
+from form import Inicio,Registro
 from sqlite3 import Error
 from db import get_db,close_db
 from quer import nomb,gene
@@ -9,6 +10,13 @@ from werkzeug.utils import secure_filename
 from carpetas import rutc
 from forms import Opinion
 from Forms_tick import Ticket
+#from crypt import methods
+from distutils.log import debug, error
+from email import message
+import email
+#import utils
+from email.message import EmailMessage
+import smtplib
 
 app=Flask(__name__)
 
