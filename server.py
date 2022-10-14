@@ -10,13 +10,9 @@ from werkzeug.utils import secure_filename
 from carpetas import rutc
 from forms import Opinion
 from Forms_tick import Ticket
-
 app=Flask(__name__)
-
 app.secret_key=os.urandom(24)
 
-@app.route("/home")
-@app.route("/index")
 @app.route('/')
 def index():
     db=get_db()
@@ -34,11 +30,14 @@ def cartelera():
 
 @app.route('/Inises/')
 def inises():
-    return render_template('Inicio_sesion.html')
+    form = Inicio()
+    return render_template('Inicio_sesion.html', form=form)
+    
 
 @app.route('/Registro/')
 def regis():
-    return render_template('Registro.html')
+    frm = Registro()
+    return render_template('Registro.html', frm=frm)
 
 @app.route('/Agregarpelicula<string:p>/', methods=['GET','POST'])
 def Agpelicula(p):
@@ -71,7 +70,6 @@ def Gusuar():
 
 @app.route('/Pelicula<string:p>/')
 def peli1(p):
-    
     db=get_db()
     nm=nomb(db)
     Datos=db.execute('Select * from Gpeliculas where ID=?',p).fetchone()
@@ -137,6 +135,52 @@ def sql_insert_products(pelicula,calificacion,comentario,usuario):
     cursorObj.execute(strsql)
     con.commit()
     con.close()
+     
+       
+@app.route('/Registro/',methods=['POST'])
+def Usuarios():      
+ frm = Registro()
+   
+ username = frm.nombre.data
+ rol= 1
+ password = frm.contraseña.data
+            # Conecta a la BD
+ with sqlite3.connect("Pcine.db") as con:
+                cursor = con.cursor()  # Manipular la BD
+                # Prepara la sentencia SQL a ejecutar
+                cursor.execute("INSERT INTO usuario (rol,nombre, password) VALUES(?,?,?)", [
+                            rol,username, password])
+                # Ejecuta la sentencia SQL
+                con.commit()
+                return redirect("/")
+ 
+@app.route('/Inicio_sesion',methods=['POST'])
+def inisesion():    
+ frm = Inicio()
+ username = frm.usuario.data
+ password = frm.contraseña.data 
+ with sqlite3.connect("Pcine.db") as con:
+  con.row_factory = sqlite3.Row
+  cursor = con.cursor()
+  cursor.execute("SELECT * FROM usuario WHERE nombre = ? AND password = ?", [username, password])
+
+            # cursor.execute(f"SELECT username FROM usuario WHERE nombre = '{username}' AND password = '{pass_enc}'")
+ row = cursor.fetchone()
+ if row:
+                # Se crea la sesión
+    session['usuario'] = username
+    session['rol'] = row["rol"]
+    if session["rol"] == "1":
+      return redirect("/")
+    elif session["rol"] == "2":
+      return redirect("/")
+    elif session["rol"] == "3":
+      return redirect("/")
+    else:
+      flash(message="Usuario no válido") 
+       
+ return redirect("/")
+app.run(debug=True)
 
 @app.route('/Opinion/', methods=['GET','POST'])
 def nuevo():
