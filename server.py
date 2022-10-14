@@ -2,7 +2,6 @@ from flask import Flask,render_template,redirect,request,url_for, session,flash
 import os
 import sqlite3
 from form import Inicio,Registro
-from sqlite3 import Error
 from db import get_db,close_db
 from quer import nomb,gene
 from form_pel import FormPel
