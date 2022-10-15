@@ -209,6 +209,3 @@ def nuevo():
         usua = request.form["usuario"]
         sql_insert_products(peli,cali,cant,usua)
         return "Comentario enviado"
-
-
-
