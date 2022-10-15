@@ -13,7 +13,6 @@ from Forms_tick import Ticket
 app=Flask(__name__)
 app.secret_key=os.urandom(24)
 
-
 @app.route("/home")
 @app.route("/index")
 @app.route('/')
